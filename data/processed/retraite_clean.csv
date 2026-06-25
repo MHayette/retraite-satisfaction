@@ -1,0 +1,301 @@
+﻿Formule,Public,Activite,Accueil,Soins_Qualite,Competence_Personnel,Disponibilite_Personnel,Reconfort,Qualite_Restauration,Hygiene,Confort_Chambre,Services_Annexes,Satisfaction,PRIX_PENSION,Sexe,CSP
+Accueil temporaire,Valides,2,1.0,4.0,4.0,1.0,1.0,2.0,1.0,1.0,2.0,3,788,homme,Employé
+Accueil temporaire,Valides,3,1.0,3.0,1.0,2.0,2.0,2.0,1.0,1.0,2.0,4,642,homme,Agriculteur
+Maison d'hôte/Studio,Valides,5,4.0,1.0,2.0,1.0,1.0,2.0,2.0,3.0,4.0,3,176,femme,Ouvrier
+Accueil temporaire,Valides,1,2.0,4.0,4.0,3.0,2.0,2.0,1.0,1.0,1.0,4,951,homme,Prof.Interméd.
+Maison d'hôte/Studio,Valides,5,3.0,3.0,4.0,2.0,3.0,2.0,3.0,3.0,4.0,7,697,femme,Prof.Interméd.
+Chambre Individuelle,Valides,5,1.0,1.0,2.0,4.0,2.0,2.0,2.0,3.0,3.0,3,896,femme,Employé
+Chambre médicalisée,Dépendantes,4,3.0,3.0,4.0,4.0,2.0,2.0,2.0,3.0,2.0,2,681,femme,Agriculteur
+Accueil temporaire,Valides,5,2.0,4.0,4.0,1.0,1.0,2.0,2.0,1.0,1.0,3,158,homme,Employé
+Accueil temporaire,Valides,3,1.0,4.0,2.0,2.0,2.0,2.0,1.0,4.0,2.0,4,41,homme,Prof.Interméd.
+Maison d'hôte/Studio,Valides,3,3.0,2.0,2.0,1.0,2.0,2.0,2.0,4.0,4.0,4,918,homme,Agriculteur
+Chambre Individuelle,Semi-valides,5,2.0,1.0,1.0,3.0,2.0,2.0,2.0,3.0,2.0,4,149,homme,Cadre Supérieur
+Chambre médicalisée,Dépendantes,1,3.0,3.0,1.0,2.0,1.0,2.0,2.0,4.0,2.0,4,608,homme,Cadre Moyen
+Chambre médicalisée,Dépendantes,2,3.0,3.0,4.0,3.0,1.0,2.0,2.0,3.0,2.0,2,354,homme,Commerc.Artisan
+Maison d'hôte/Studio,Valides,4,3.0,2.0,1.0,2.0,1.0,2.0,2.0,3.0,4.0,3,584,femme,Cadre Moyen
+Chambre Individuelle,Semi-valides,4,2.0,1.0,1.0,2.0,1.0,2.0,3.0,3.0,4.0,2,667,femme,Employé
+Maison d'hôte/Studio,Valides,2,4.0,2.0,2.0,2.0,2.0,2.0,2.0,4.0,2.0,4,675,homme,"Inactif, Autre"
+Chambre Individuelle,Semi-valides,3,3.0,2.0,4.0,4.0,2.0,3.0,1.0,3.0,3.0,3,491,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,4,4.0,2.0,2.5,4.0,2.0,1.0,2.0,3.0,4.0,5,53,femme,Prof.Interméd.
+Accueil temporaire,Valides,1,1.0,3.0,3.0,1.0,1.0,2.0,1.0,2.0,1.0,4,675,homme,"Inactif, Autre"
+Chambre médicalisée,Dépendantes,1,3.0,3.0,3.0,3.0,3.0,2.0,1.0,4.0,2.0,5,808,femme,Cadre Moyen
+Chambre médicalisée,Dépendantes,5,2.0,3.0,4.0,3.0,4.0,2.0,2.0,3.0,3.0,4,760,femme,Prof.Interméd.
+Chambre médicalisée,Semi-valides,5,2.0,2.0,4.0,4.0,1.0,2.0,2.0,4.0,3.0,4,268,homme,Commerc.Artisan
+Accueil temporaire,Valides,5,1.0,2.0,1.0,3.0,1.0,2.0,2.0,4.0,2.0,2,663,femme,Ouvrier
+Maison d'hôte/Studio,Valides,4,3.0,1.0,1.0,1.0,3.0,1.0,2.0,3.0,4.0,2,170,femme,Commerc.Artisan
+Chambre Individuelle,Semi-valides,3,1.0,2.0,1.0,3.0,1.0,1.0,2.0,3.0,3.0,2,743,homme,Commerc.Artisan
+Chambre médicalisée,Dépendantes,5,3.0,3.0,4.0,4.0,1.0,2.0,2.0,2.0,3.0,3,184,homme,"Inactif, Autre"
+Chambre Individuelle,Valides,4,3.0,3.0,1.0,4.0,1.0,1.0,3.0,4.0,3.0,7,390,femme,Agriculteur
+Chambre médicalisée,Dépendantes,1,2.0,2.0,4.0,3.0,4.0,2.0,2.0,2.0,4.0,3,118,homme,Employé
+Chambre médicalisée,Semi-valides,5,4.0,4.0,4.0,3.0,3.0,2.0,2.0,3.0,4.0,5,249,homme,Commerc.Artisan
+Chambre médicalisée,Dépendantes,1,3.0,4.0,4.0,2.0,4.0,2.0,2.0,3.0,2.0,4,131,homme,Employé
+Maison d'hôte/Studio,Valides,3,2.0,2.0,1.0,1.0,2.0,2.0,3.0,3.0,3.0,3,711,femme,Cadre Moyen
+Accueil temporaire,Valides,2,1.0,4.0,4.0,1.0,1.0,1.0,2.0,2.0,1.0,4,702,homme,Cadre Supérieur
+Chambre médicalisée,Semi-valides,3,3.0,3.0,3.0,3.0,4.0,2.0,3.0,3.0,2.0,7,235,homme,Cadre Supérieur
+Chambre Individuelle,Dépendantes,3,2.0,3.0,2.0,4.0,2.0,2.0,2.0,4.0,1.0,3,233,homme,Employé
+Accueil temporaire,Valides,3,2.0,4.0,4.0,2.0,2.0,2.0,1.0,1.0,2.0,3,282,femme,Cadre Moyen
+Chambre Individuelle,Dépendantes,2,4.0,3.0,4.0,3.0,2.0,2.0,2.0,4.0,2.0,2,726,homme,Commerc.Artisan
+Maison d'hôte/Studio,Valides,3,3.0,2.0,4.0,1.0,1.0,2.0,2.0,4.0,4.0,4,815,femme,Cadre Moyen
+Chambre médicalisée,Dépendantes,3,3.0,3.0,4.0,3.0,2.0,2.0,2.0,1.0,3.0,3,708,homme,Employé
+Maison d'hôte/Studio,Valides,4,3.0,1.0,4.0,1.0,3.0,4.0,2.0,4.0,3.0,3,828,femme,Agriculteur
+Chambre médicalisée,Semi-valides,3,3.0,2.0,2.0,4.0,2.0,2.0,2.0,3.0,3.0,3,42,homme,Agriculteur
+Chambre Individuelle,Semi-valides,2,3.0,2.0,2.0,1.0,1.0,2.0,3.0,3.0,4.0,6,426,homme,Employé
+Accueil temporaire,Valides,3,1.0,2.0,4.0,1.0,2.0,2.0,1.0,1.0,2.0,5,427,femme,Agriculteur
+Accueil temporaire,Valides,3,1.0,3.0,4.0,2.0,1.0,2.0,2.0,1.0,3.0,3,980,homme,Cadre Supérieur
+Accueil temporaire,Valides,1,1.0,4.0,1.0,1.0,2.0,1.0,3.0,2.0,1.0,8,715,femme,Cadre Supérieur
+Accueil temporaire,Valides,2,1.0,4.0,4.0,2.0,1.0,2.0,1.0,3.0,1.0,4,122,homme,Commerc.Artisan
+Accueil temporaire,Valides,3,1.0,4.0,2.0,3.0,2.0,1.0,1.0,4.0,2.0,2,274,femme,Cadre Supérieur
+Maison d'hôte/Studio,Valides,2,4.0,2.0,1.0,2.0,1.0,2.0,2.0,2.0,4.0,3,955,femme,Cadre Moyen
+Maison d'hôte/Studio,Valides,4,3.0,1.0,2.0,1.0,1.0,2.0,4.0,3.0,4.0,4,3,homme,Cadre Moyen
+Chambre médicalisée,Dépendantes,3,3.0,3.0,4.0,3.0,2.0,4.0,2.0,3.0,2.0,2,870,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,4,3.0,1.0,1.0,2.0,1.0,2.0,2.0,1.0,4.0,2,184,homme,Commerc.Artisan
+Maison d'hôte/Studio,Valides,5,4.0,3.0,4.0,1.0,1.0,2.0,1.0,3.0,3.0,4,288,femme,Ouvrier
+Chambre Individuelle,Dépendantes,1,3.0,1.0,2.0,4.0,4.0,2.0,1.0,3.0,2.0,3,449,femme,Ouvrier
+Maison d'hôte/Studio,Valides,5,4.0,2.0,2.0,1.0,2.0,2.0,2.0,4.0,3.0,5,933,homme,Employé
+Accueil temporaire,Valides,4,1.0,2.0,2.0,1.0,1.0,2.0,2.0,1.0,2.0,4,673,homme,Prof.Interméd.
+Chambre médicalisée,Dépendantes,1,1.0,4.0,3.0,3.0,4.0,2.0,3.0,2.0,4.0,4,477,femme,"Inactif, Autre"
+Chambre Individuelle,Valides,5,3.0,1.0,2.0,4.0,2.0,2.0,1.0,4.0,4.0,3,125,homme,Agriculteur
+Maison d'hôte/Studio,Valides,5,4.0,1.0,2.0,4.0,2.0,2.0,2.0,2.0,4.0,3,323,homme,Commerc.Artisan
+Chambre médicalisée,Semi-valides,2,3.0,3.0,4.0,3.0,2.0,3.0,1.0,3.0,4.0,3,864,femme,Commerc.Artisan
+Accueil temporaire,Valides,5,3.0,3.0,4.0,3.0,2.0,2.0,1.0,1.0,2.0,4,536,femme,Prof.Interméd.
+Chambre Individuelle,Semi-valides,3,3.0,2.0,2.0,1.0,2.0,2.0,3.0,4.0,4.0,6,913,femme,Cadre Supérieur
+Chambre médicalisée,Semi-valides,1,3.0,3.0,4.0,4.0,3.0,2.0,2.0,3.0,4.0,3,652,femme,Cadre Moyen
+Accueil temporaire,Valides,5,2.0,3.0,4.0,2.0,2.0,2.0,1.0,1.0,1.0,3,821,homme,Commerc.Artisan
+Chambre Individuelle,Dépendantes,1,2.0,2.0,2.0,1.0,1.0,2.0,2.0,3.0,4.0,5,280,femme,Employé
+Maison d'hôte/Studio,Valides,2,3.0,2.0,2.0,2.0,1.0,1.0,2.0,3.0,4.0,3,480,femme,Cadre Supérieur
+Accueil temporaire,Valides,4,2.0,2.0,4.0,2.0,1.0,1.0,2.0,3.0,2.0,2,549,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,2,4.0,2.0,1.0,1.0,1.0,1.0,2.0,4.0,4.0,3,433,femme,Agriculteur
+Accueil temporaire,Valides,4,2.0,4.0,4.0,1.0,2.0,4.0,2.0,1.0,4.0,2,112,femme,Cadre Supérieur
+Chambre médicalisée,Dépendantes,2,2.0,2.0,4.0,2.0,1.0,2.0,1.0,3.0,3.0,5,607,homme,Commerc.Artisan
+Chambre médicalisée,Dépendantes,3,2.0,4.0,4.0,3.0,1.0,2.0,1.0,3.0,3.0,4,447,femme,"Inactif, Autre"
+Chambre Individuelle,Semi-valides,1,2.0,3.0,4.0,2.0,2.0,2.0,2.0,4.0,3.0,5,73,homme,Cadre Supérieur
+Maison d'hôte/Studio,Valides,5,3.0,2.0,2.0,4.0,2.0,2.0,3.0,3.0,4.0,6,600,homme,"Inactif, Autre"
+Accueil temporaire,Valides,1,3.0,4.0,1.0,2.0,2.0,1.0,1.0,2.0,2.0,4,306,femme,Employé
+Accueil temporaire,Valides,5,1.0,4.0,4.0,2.0,1.0,2.0,1.0,1.0,2.0,3,401,homme,Ouvrier
+Accueil temporaire,Valides,5,1.0,2.0,3.0,1.0,1.0,3.0,2.0,3.0,2.0,4,537,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,4,3.0,1.0,2.0,1.0,1.0,2.0,2.0,3.0,3.0,3,382,femme,Cadre Moyen
+Chambre médicalisée,Dépendantes,3,3.0,4.0,3.0,2.0,2.0,2.0,2.0,3.0,2.0,3,749,homme,Cadre Moyen
+Chambre médicalisée,Dépendantes,5,3.0,4.0,4.0,3.0,1.0,2.0,1.0,3.0,2.0,4,968,femme,Employé
+Accueil temporaire,Valides,4,1.0,3.0,4.0,1.0,1.0,4.0,1.0,3.0,1.0,4,82,femme,Employé
+Chambre médicalisée,Semi-valides,3,3.0,4.0,4.0,3.0,2.0,1.0,2.0,1.0,4.0,3,184,femme,Agriculteur
+Chambre médicalisée,Dépendantes,4,3.0,4.0,1.0,3.0,2.0,1.0,2.0,4.0,2.0,3,234,homme,Cadre Supérieur
+Maison d'hôte/Studio,Valides,3,4.0,1.0,2.0,3.0,2.0,2.0,2.0,3.0,2.0,3,713,homme,Prof.Interméd.
+Maison d'hôte/Studio,Valides,5,3.0,1.0,2.0,1.0,1.0,2.0,1.0,3.0,4.0,3,955,femme,Agriculteur
+Chambre Individuelle,Valides,5,3.0,3.0,4.0,2.0,2.0,2.0,1.0,2.0,2.0,8,795,femme,Cadre Supérieur
+Accueil temporaire,Valides,5,1.0,3.0,4.0,3.0,1.0,2.0,1.0,1.0,1.0,7,545,homme,"Inactif, Autre"
+Accueil temporaire,Valides,3,2.0,3.0,4.0,2.0,1.0,2.0,2.0,1.0,1.0,7,487,femme,Employé
+Chambre Individuelle,Semi-valides,3,3.0,2.0,2.0,4.0,2.0,1.0,1.0,4.0,4.0,7,421,femme,Cadre Moyen
+Chambre médicalisée,Semi-valides,1,4.0,3.0,2.0,4.0,2.0,2.0,2.0,3.0,4.0,6,502,homme,Cadre Moyen
+Chambre Individuelle,Valides,3,3.0,3.0,2.0,4.0,4.0,3.0,2.0,1.0,2.0,6,119,homme,Prof.Interméd.
+Accueil temporaire,Valides,5,2.0,4.0,2.0,1.0,2.0,2.0,1.0,1.0,2.0,5,837,homme,Prof.Interméd.
+Maison d'hôte/Studio,Valides,5,3.0,3.0,3.0,2.0,2.0,3.0,3.0,4.0,4.0,8,927,femme,Agriculteur
+Accueil temporaire,Valides,5,1.0,2.0,4.0,2.0,2.0,1.0,1.0,2.0,4.0,7,47,femme,Employé
+Accueil temporaire,Valides,4,1.0,2.0,4.0,2.0,1.0,3.0,1.0,2.0,1.0,5,166,homme,Agriculteur
+Chambre Individuelle,Semi-valides,5,3.0,2.0,2.0,2.0,2.0,2.0,2.0,3.0,2.0,6,437,femme,Cadre Supérieur
+Chambre Individuelle,Semi-valides,3,3.0,2.0,4.0,2.0,2.0,3.0,1.0,3.0,2.0,7,574,homme,Prof.Interméd.
+Chambre Individuelle,Semi-valides,1,3.0,3.0,2.0,2.0,1.0,1.0,2.0,3.0,4.0,6,257,femme,Cadre Supérieur
+Chambre médicalisée,Dépendantes,1,2.0,2.0,4.0,4.0,3.0,2.0,1.0,3.0,2.0,6,599,femme,Cadre Moyen
+Chambre médicalisée,Dépendantes,3,2.0,3.0,4.0,3.0,2.0,2.0,2.0,3.0,2.0,8,849,homme,Agriculteur
+Maison d'hôte/Studio,Valides,4,4.0,2.0,2.0,3.0,4.0,3.0,1.0,3.0,4.0,6,337,homme,Cadre Supérieur
+Accueil temporaire,Valides,2,1.0,4.0,4.0,1.0,2.0,1.0,2.0,1.0,2.0,2,622,femme,Agriculteur
+Chambre médicalisée,Semi-valides,2,3.0,4.0,1.0,4.0,2.0,1.0,2.0,3.0,1.0,8,346,femme,Employé
+Maison d'hôte/Studio,Valides,5,3.0,2.0,1.0,2.0,1.0,2.0,1.0,1.0,4.0,2,342,femme,Ouvrier
+Chambre médicalisée,Dépendantes,4,3.0,2.0,4.0,3.0,2.0,2.0,2.0,3.0,4.0,6,788,homme,Commerc.Artisan
+Chambre Individuelle,Valides,1,3.0,3.0,2.0,1.0,1.0,2.0,3.0,3.0,1.0,5,393,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,4,3.0,1.0,1.0,1.0,1.0,3.0,2.0,3.0,4.0,2,53,homme,Employé
+Chambre Individuelle,Valides,2,3.0,3.0,4.0,2.0,3.0,3.0,2.0,1.0,4.0,7,818,homme,"Inactif, Autre"
+Chambre Individuelle,Dépendantes,1,4.0,4.0,1.0,1.0,2.0,4.0,2.0,4.0,4.0,6,18,homme,Cadre Supérieur
+Chambre Individuelle,Semi-valides,5,3.0,3.0,2.0,4.0,1.0,2.0,3.0,3.0,4.0,6,355,femme,Agriculteur
+Accueil temporaire,Valides,2,2.0,4.0,4.0,1.0,1.0,1.0,2.0,2.0,4.0,4,210,femme,"Inactif, Autre"
+Accueil temporaire,Valides,2,1.0,3.0,4.0,2.0,2.0,2.0,1.0,1.0,2.0,8,563,femme,Agriculteur
+Chambre médicalisée,Dépendantes,4,3.0,2.0,3.0,4.0,4.0,2.0,2.0,3.0,4.0,6,533,femme,Agriculteur
+Accueil temporaire,Valides,5,3.0,4.0,1.0,4.0,2.0,2.0,1.0,1.0,1.0,5,129,homme,Agriculteur
+Maison d'hôte/Studio,Valides,2,2.0,1.0,2.0,1.0,1.0,2.0,2.0,3.0,3.0,2,518,femme,Agriculteur
+Chambre Individuelle,Dépendantes,3,3.0,2.0,2.0,4.0,3.0,1.0,2.0,3.0,3.0,4,241,homme,Cadre Supérieur
+Chambre médicalisée,Dépendantes,4,3.0,4.0,2.0,4.0,1.0,1.0,2.0,1.0,4.0,6,320,homme,"Inactif, Autre"
+Chambre médicalisée,Semi-valides,1,3.0,4.0,2.0,4.0,3.0,1.0,2.0,3.0,4.0,4,117,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,5,4.0,1.0,2.0,2.0,2.0,1.0,1.0,4.0,4.0,2,703,femme,Employé
+Maison d'hôte/Studio,Valides,3,4.0,1.0,2.0,2.0,1.0,2.0,1.0,3.0,4.0,2,575,homme,Prof.Interméd.
+Chambre médicalisée,Semi-valides,3,2.0,1.0,4.0,3.0,2.0,2.0,2.0,4.0,3.0,2,531,femme,Prof.Interméd.
+Maison d'hôte/Studio,Valides,2,3.0,1.0,1.0,2.0,1.0,2.0,1.0,1.0,4.0,1,19,femme,"Inactif, Autre"
+Accueil temporaire,Valides,1,2.0,3.0,4.0,2.0,1.0,2.0,2.0,2.0,2.0,4,549,homme,Ouvrier
+Maison d'hôte/Studio,Valides,5,3.0,2.0,2.5,2.0,2.0,2.0,2.0,3.0,3.0,4,870,homme,Cadre Moyen
+Chambre Individuelle,Semi-valides,3,2.0,3.0,4.0,2.0,4.0,2.0,2.0,4.0,4.0,7,845,femme,Ouvrier
+Maison d'hôte/Studio,Valides,4,4.0,4.0,2.0,2.0,1.0,3.0,2.0,4.0,4.0,4,969,femme,Cadre Moyen
+Chambre médicalisée,Semi-valides,2,3.0,3.0,4.0,3.0,4.0,2.0,2.0,3.0,2.0,8,577,femme,Prof.Interméd.
+Chambre médicalisée,Semi-valides,1,3.0,3.0,4.0,3.0,2.0,2.0,3.0,1.0,2.0,5,44,homme,Prof.Interméd.
+Chambre Individuelle,Valides,3,3.0,2.0,2.0,4.0,2.0,1.0,2.0,2.0,4.0,7,48,homme,Cadre Supérieur
+Chambre médicalisée,Semi-valides,4,3.0,3.0,2.0,3.0,2.0,2.0,2.0,1.0,3.0,5,273,homme,Prof.Interméd.
+Maison d'hôte/Studio,Valides,3,3.0,2.0,2.0,2.0,2.0,2.0,2.0,4.0,4.0,6,160,femme,Ouvrier
+Chambre médicalisée,Semi-valides,1,1.0,2.0,4.0,3.0,2.0,1.0,2.0,3.0,2.0,7,903,femme,Employé
+Accueil temporaire,Valides,1,1.0,4.0,4.0,2.0,2.0,2.0,2.0,1.0,4.0,4,780,femme,Cadre Moyen
+Accueil temporaire,Valides,4,1.0,3.0,1.0,3.0,2.0,2.0,1.0,2.0,3.0,5,803,homme,Employé
+Chambre Individuelle,Semi-valides,5,4.0,3.0,3.0,2.0,4.0,2.0,2.0,3.0,3.0,6,942,femme,Agriculteur
+Chambre Individuelle,Valides,2,4.0,3.0,4.0,1.0,2.0,3.0,3.0,3.0,3.0,7,915,femme,Commerc.Artisan
+Accueil temporaire,Valides,3,3.0,4.0,4.0,4.0,1.0,2.0,1.0,3.0,1.0,5,636,femme,"Inactif, Autre"
+Maison d'hôte/Studio,Valides,4,3.0,2.0,2.0,1.0,4.0,2.0,2.0,4.0,3.0,6,613,homme,Commerc.Artisan
+Chambre médicalisée,Semi-valides,1,3.0,2.0,4.0,4.0,4.0,2.0,2.0,4.0,3.0,8,136,femme,Cadre Supérieur
+Maison d'hôte/Studio,Valides,5,3.0,1.0,2.0,2.0,2.0,2.0,2.0,3.0,4.0,3,366,femme,Employé
+Chambre médicalisée,Dépendantes,5,3.0,4.0,4.0,3.0,2.0,2.0,2.0,1.0,2.0,5,64,femme,Commerc.Artisan
+Maison d'hôte/Studio,Valides,5,3.0,1.0,2.0,1.0,1.0,2.0,3.0,3.0,3.0,2,423,homme,Employé
+Maison d'hôte/Studio,Valides,2,3.0,1.0,2.0,1.0,1.0,2.0,2.0,4.0,3.0,3,704,femme,Cadre Supérieur
+Chambre médicalisée,Semi-valides,1,4.0,1.0,3.0,4.0,2.0,2.0,2.0,3.0,3.0,2,170,homme,Cadre Moyen
+Chambre médicalisée,Dépendantes,4,3.0,4.0,4.0,3.0,4.0,2.0,3.0,3.0,4.0,6,693,femme,Ouvrier
+Chambre Individuelle,Valides,3,2.0,1.0,1.0,3.0,1.0,2.0,2.0,4.0,3.0,3,615,femme,Employé
+Chambre médicalisée,Semi-valides,3,3.0,4.0,2.0,4.0,4.0,2.0,3.0,3.0,3.0,4,541,homme,Cadre Supérieur
+Chambre Individuelle,Dépendantes,5,4.0,3.0,4.0,2.0,2.0,4.0,3.0,3.0,3.0,7,99,homme,Employé
+Chambre médicalisée,Semi-valides,3,3.0,4.0,4.0,1.0,2.0,1.0,3.0,2.0,1.0,4,159,homme,"Inactif, Autre"
+Chambre médicalisée,Dépendantes,5,3.0,3.0,4.0,3.0,2.0,2.0,2.0,1.0,2.0,5,485,femme,Prof.Interméd.
+Accueil temporaire,Valides,2,1.0,3.0,4.0,1.0,1.0,2.0,1.0,2.0,2.0,6,345,femme,Cadre Supérieur
+Maison d'hôte/Studio,Valides,5,3.0,1.0,1.0,2.0,2.0,2.0,2.0,3.0,3.0,3,294,femme,Employé
+Chambre médicalisée,Semi-valides,2,4.0,3.0,4.0,4.0,2.0,3.0,2.0,4.0,1.0,8,197,homme,Ouvrier
+Chambre Individuelle,Semi-valides,2,3.0,1.0,3.0,3.0,2.0,2.0,2.0,4.0,3.0,3,927,homme,Employé
+Maison d'hôte/Studio,Valides,5,3.0,2.0,2.0,1.0,1.0,2.0,2.0,1.0,4.0,4,194,homme,Agriculteur
+Accueil temporaire,Semi-valides,3,1.0,4.0,3.0,1.0,3.0,2.0,1.0,1.0,2.0,4,195,femme,Cadre Supérieur
+Maison d'hôte/Studio,Valides,2,4.0,3.0,1.0,2.0,1.0,3.0,2.0,4.0,4.0,6,83,femme,Prof.Interméd.
+Accueil temporaire,Valides,3,1.0,3.0,3.0,2.0,3.0,2.0,2.0,2.0,1.0,5,332,femme,"Inactif, Autre"
+Accueil temporaire,Valides,4,1.0,2.0,4.0,2.0,2.0,2.0,2.0,1.0,3.0,4,237,femme,Commerc.Artisan
+Chambre médicalisée,Dépendantes,4,3.0,4.0,4.0,4.0,2.0,3.0,3.0,4.0,1.0,7,860,homme,Cadre Moyen
+Chambre médicalisée,Dépendantes,1,2.0,4.0,2.0,4.0,1.0,2.0,2.0,3.0,4.0,5,240,homme,Prof.Interméd.
+Chambre médicalisée,Dépendantes,3,1.0,4.0,4.0,2.0,2.0,1.0,1.0,3.0,2.0,4,366,homme,Cadre Moyen
+Accueil temporaire,Semi-valides,4,1.0,4.0,2.0,1.0,1.0,2.0,1.0,3.0,1.0,3,422,femme,"Inactif, Autre"
+Maison d'hôte/Studio,Semi-valides,5,3.0,2.0,2.0,1.0,1.0,2.0,2.0,1.0,3.0,3,430,homme,Cadre Supérieur
+Chambre médicalisée,Dépendantes,4,3.0,2.0,3.0,2.0,4.0,2.0,2.0,1.0,3.0,6,871,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,4,3.0,1.0,1.0,1.0,1.0,2.0,1.0,2.0,4.0,4,659,homme,Cadre Supérieur
+Accueil temporaire,Valides,5,3.0,3.0,4.0,1.0,1.0,2.0,2.0,2.0,1.0,5,440,homme,Cadre Supérieur
+Accueil temporaire,Semi-valides,1,2.0,4.0,4.0,2.0,2.0,2.0,1.0,3.0,2.0,4,934,homme,"Inactif, Autre"
+Maison d'hôte/Studio,Semi-valides,4,3.0,2.0,4.0,1.0,3.0,2.0,2.0,4.0,4.0,7,961,femme,Employé
+Chambre médicalisée,Semi-valides,4,3.0,3.0,4.0,3.0,2.0,2.0,1.0,3.0,2.0,6,329,femme,Prof.Interméd.
+Maison d'hôte/Studio,Semi-valides,5,2.0,2.0,2.0,1.0,2.0,2.0,2.0,4.0,3.0,6,26,femme,Agriculteur
+Maison d'hôte/Studio,Valides,2,4.0,2.0,1.0,2.0,2.0,1.0,2.0,3.0,2.0,6,508,femme,Cadre Moyen
+Chambre médicalisée,Dépendantes,5,3.0,3.0,4.0,3.0,4.0,2.0,2.0,4.0,2.0,7,803,femme,Cadre Moyen
+Chambre Individuelle,Dépendantes,2,4.0,4.0,1.0,1.0,1.0,2.0,3.0,4.0,3.0,5,85,femme,Commerc.Artisan
+Accueil temporaire,Semi-valides,5,2.0,4.0,2.0,4.0,2.0,2.0,1.0,1.0,2.0,5,184,femme,Cadre Supérieur
+Accueil temporaire,Valides,4,3.0,3.0,4.0,1.0,1.0,3.0,1.0,4.0,2.0,4,639,homme,Ouvrier
+Chambre médicalisée,Dépendantes,5,2.0,2.0,3.0,4.0,3.0,2.0,2.0,1.0,2.0,6,916,femme,Agriculteur
+Chambre médicalisée,Dépendantes,1,2.0,4.0,4.0,3.0,3.0,2.0,2.0,3.0,4.0,6,374,femme,Cadre Supérieur
+Chambre Individuelle,Dépendantes,1,3.0,3.0,2.0,2.0,2.0,2.0,2.0,4.0,3.0,6,22,homme,"Inactif, Autre"
+Chambre médicalisée,Dépendantes,4,3.0,3.0,2.0,4.0,1.0,2.0,3.0,1.0,3.0,5,134,homme,Employé
+Accueil temporaire,Valides,5,1.0,4.0,2.0,1.0,2.0,2.0,2.0,1.0,3.0,5,852,femme,Cadre Supérieur
+Chambre Individuelle,Dépendantes,1,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0,3.0,4,914,homme,Cadre Moyen
+Chambre médicalisée,Semi-valides,4,2.0,4.0,4.0,4.0,3.0,2.0,2.0,3.0,4.0,6,166,femme,Agriculteur
+Maison d'hôte/Studio,Valides,4,3.0,2.0,4.0,2.0,1.0,2.0,2.0,4.0,4.0,6,749,femme,Ouvrier
+Chambre médicalisée,Dépendantes,4,2.0,4.0,3.0,2.0,3.0,2.0,2.0,3.0,3.0,6,994,femme,Agriculteur
+Maison d'hôte/Studio,Valides,5,4.0,3.0,4.0,3.0,1.0,3.0,3.0,4.0,4.0,7,83,femme,Cadre Moyen
+Chambre Individuelle,Semi-valides,3,3.0,2.0,1.0,3.0,2.0,3.0,1.0,1.0,3.0,5,8,femme,Employé
+Chambre Individuelle,Dépendantes,3,3.0,1.0,2.0,2.0,4.0,2.0,2.0,3.0,4.0,7,247,homme,Prof.Interméd.
+Accueil temporaire,Valides,1,1.0,2.0,2.0,2.0,2.0,1.0,1.0,1.0,2.0,7,675,femme,Cadre Moyen
+Chambre Individuelle,Semi-valides,1,2.0,2.0,2.0,1.0,3.0,2.0,1.0,3.0,2.0,4,187,homme,Prof.Interméd.
+Maison d'hôte/Studio,Semi-valides,5,3.0,1.0,2.0,1.0,3.0,1.0,2.0,3.0,3.0,4,597,homme,"Inactif, Autre"
+Accueil temporaire,Semi-valides,2,3.0,3.0,4.0,1.0,1.0,2.0,2.0,3.0,2.0,6,220,homme,"Inactif, Autre"
+Accueil temporaire,Valides,2,1.0,4.0,4.0,2.0,2.0,2.0,1.0,3.0,1.0,5,45,femme,Prof.Interméd.
+Chambre Individuelle,Valides,2,3.0,3.0,1.0,2.0,3.0,2.0,2.0,1.0,2.0,4,985,femme,Agriculteur
+Chambre Individuelle,Semi-valides,1,4.0,3.0,4.0,4.0,1.0,3.0,2.0,2.0,4.0,7,548,femme,Cadre Moyen
+Accueil temporaire,Semi-valides,3,1.0,3.0,2.0,2.0,1.0,2.0,1.0,1.0,1.0,4,381,femme,"Inactif, Autre"
+Maison d'hôte/Studio,Semi-valides,3,3.0,3.0,2.0,2.0,1.0,2.0,1.0,3.0,4.0,5,780,femme,Cadre Supérieur
+Chambre Individuelle,Semi-valides,5,1.0,1.0,2.0,4.0,2.0,2.0,2.0,3.0,4.0,2,8,femme,Employé
+Chambre Individuelle,Semi-valides,5,3.0,3.0,4.0,3.0,2.0,2.0,2.0,1.0,1.0,6,892,homme,Agriculteur
+Chambre Individuelle,Semi-valides,2,3.0,1.0,2.0,2.0,1.0,2.0,2.0,4.0,4.0,2,623,femme,Prof.Interméd.
+Accueil temporaire,Semi-valides,2,1.0,2.0,3.0,1.0,1.0,1.0,2.0,1.0,2.0,6,111,homme,Agriculteur
+Accueil temporaire,Semi-valides,5,1.0,3.0,2.0,2.0,2.0,3.0,1.0,1.0,2.0,4,532,homme,Agriculteur
+Chambre médicalisée,Dépendantes,2,3.0,3.0,2.0,4.0,4.0,2.0,2.0,1.0,4.0,4,217,femme,Cadre Moyen
+Accueil temporaire,Semi-valides,5,3.0,3.0,2.0,2.0,2.0,3.0,1.0,2.0,1.0,6,33,homme,Ouvrier
+Accueil temporaire,Valides,2,1.0,4.0,4.0,1.0,1.0,2.0,2.0,3.0,1.0,4,492,femme,Cadre Moyen
+Accueil temporaire,Semi-valides,5,1.0,4.0,2.0,1.0,1.0,2.0,1.0,2.0,3.0,5,472,femme,Agriculteur
+Chambre médicalisée,Dépendantes,4,4.0,3.0,2.0,4.0,2.0,2.0,3.0,3.0,1.0,3,590,femme,"Inactif, Autre"
+Chambre médicalisée,Valides,4,2.0,3.0,4.0,3.0,1.0,2.0,2.0,4.0,4.0,4,395,homme,"Inactif, Autre"
+Chambre Individuelle,Dépendantes,1,2.0,1.0,2.0,2.0,4.0,3.0,2.0,3.0,4.0,7,405,femme,"Inactif, Autre"
+Accueil temporaire,Valides,3,2.0,2.0,2.0,3.0,2.0,2.0,1.0,2.0,4.0,5,319,femme,"Inactif, Autre"
+Accueil temporaire,Semi-valides,3,2.0,4.0,4.0,2.0,1.0,2.0,2.0,1.0,1.0,4,177,homme,Ouvrier
+Chambre médicalisée,Valides,2,3.0,3.0,4.0,3.0,1.0,2.0,2.0,3.0,3.0,5,18,femme,Ouvrier
+Maison d'hôte/Studio,Valides,4,3.0,2.0,2.0,2.0,2.0,1.0,3.0,3.0,4.0,5,892,femme,Prof.Interméd.
+Chambre médicalisée,Semi-valides,4,3.0,4.0,2.0,4.0,2.0,2.0,2.0,4.0,2.0,6,147,femme,"Inactif, Autre"
+Maison d'hôte/Studio,Valides,3,4.0,1.0,3.0,2.0,1.0,1.0,2.0,4.0,4.0,2,337,femme,Prof.Interméd.
+Chambre Individuelle,Valides,5,3.0,3.0,4.0,3.0,2.0,3.0,2.0,3.0,3.0,6,470,femme,Cadre Supérieur
+Chambre Individuelle,Semi-valides,2,2.0,1.0,2.0,3.0,1.0,1.0,2.0,3.0,2.0,7,655,homme,Ouvrier
+Chambre Individuelle,Semi-valides,5,4.0,2.0,2.0,3.0,3.0,1.0,2.0,4.0,1.0,5,46,homme,Cadre Supérieur
+Chambre médicalisée,Valides,4,3.0,3.0,4.0,3.0,3.0,3.0,2.0,3.0,2.0,4,989,homme,Commerc.Artisan
+Chambre médicalisée,Semi-valides,3,3.0,3.0,2.0,3.0,2.0,2.0,2.0,1.0,2.0,7,277,femme,Cadre Supérieur
+Accueil temporaire,Semi-valides,4,1.0,4.0,2.0,2.0,1.0,2.0,2.0,1.0,2.0,2,322,femme,Employé
+Chambre Individuelle,Semi-valides,3,3.0,3.0,4.0,2.0,1.0,2.0,2.0,3.0,4.0,9,800,femme,Agriculteur
+Chambre médicalisée,Valides,4,3.0,4.0,4.0,4.0,4.0,3.0,2.0,4.0,4.0,10,773,femme,Prof.Interméd.
+Maison d'hôte/Studio,Dépendantes,4,3.0,3.0,2.0,1.0,2.0,2.0,2.0,3.0,3.0,2,278,homme,Employé
+Chambre Individuelle,Semi-valides,5,3.0,3.0,4.0,2.0,2.0,2.0,2.0,1.0,4.0,5,627,femme,Cadre Supérieur
+Maison d'hôte/Studio,Semi-valides,5,4.0,2.0,4.0,3.0,1.0,2.0,2.0,3.0,2.0,5,262,homme,Agriculteur
+Chambre Individuelle,Valides,4,2.0,1.0,2.0,3.0,2.0,2.0,2.0,3.0,4.0,2,615,homme,Employé
+Accueil temporaire,Semi-valides,3,3.0,2.0,2.0,2.0,1.0,2.0,1.0,3.0,4.0,2,620,femme,Ouvrier
+Maison d'hôte/Studio,Dépendantes,2,3.0,3.0,2.0,2.0,2.0,2.0,2.0,4.0,4.0,5,161,femme,Agriculteur
+Chambre Individuelle,Dépendantes,2,3.0,3.0,1.0,4.0,3.0,1.0,2.0,4.0,3.0,5,735,femme,Ouvrier
+Accueil temporaire,Semi-valides,4,3.0,3.0,2.0,1.0,2.0,1.0,1.0,4.0,1.0,6,635,femme,Cadre Moyen
+Maison d'hôte/Studio,Semi-valides,4,3.0,2.0,2.0,2.0,3.0,1.0,3.0,2.0,3.0,6,26,homme,Ouvrier
+Accueil temporaire,Dépendantes,3,2.0,3.0,4.0,1.0,1.0,2.0,1.0,1.0,1.0,5,966,homme,Prof.Interméd.
+Maison d'hôte/Studio,Dépendantes,2,3.0,3.0,2.0,2.0,2.0,2.0,2.0,3.0,4.0,5,717,homme,Employé
+Chambre médicalisée,Valides,3,1.0,4.0,2.0,4.0,2.0,2.0,1.0,3.0,4.0,3,41,femme,Employé
+Accueil temporaire,Valides,4,1.0,4.0,4.0,2.0,1.0,2.0,2.0,1.0,1.0,5,666,femme,Agriculteur
+Chambre médicalisée,Semi-valides,2,3.0,4.0,4.0,4.0,2.0,2.0,2.0,1.0,4.0,5,702,homme,Commerc.Artisan
+Chambre médicalisée,Dépendantes,4,3.0,3.0,3.0,3.0,1.0,1.0,2.0,4.0,3.0,4,169,homme,Cadre Moyen
+Chambre médicalisée,Dépendantes,1,3.0,4.0,4.0,4.0,4.0,2.0,2.0,3.0,3.0,5,152,femme,Agriculteur
+Accueil temporaire,Dépendantes,5,2.0,3.0,1.0,3.0,1.0,2.0,2.0,1.0,1.0,5,848,homme,Cadre Moyen
+Chambre Individuelle,Valides,2,3.0,1.0,1.0,2.0,2.0,2.0,3.0,3.0,4.0,3,285,femme,Cadre Supérieur
+Chambre Individuelle,Semi-valides,1,3.0,3.0,2.5,2.0,2.0,2.0,2.0,3.0,4.0,9,922,homme,Agriculteur
+Accueil temporaire,Valides,1,1.0,4.0,4.0,3.0,2.0,1.0,1.0,1.0,3.0,6,862,homme,Cadre Moyen
+Accueil temporaire,Valides,2,2.0,4.0,4.0,2.0,2.0,1.0,1.0,4.0,2.0,7,865,femme,Commerc.Artisan
+Chambre médicalisée,Semi-valides,1,4.0,3.0,4.0,4.0,3.0,2.0,2.0,4.0,2.0,7,5,homme,Prof.Interméd.
+Chambre Individuelle,Dépendantes,5,4.0,1.0,1.0,4.0,1.0,2.0,1.0,2.0,3.0,4,894,femme,Employé
+Maison d'hôte/Studio,Valides,5,4.0,1.0,1.0,1.0,4.0,2.0,2.0,4.0,4.0,4,525,femme,Employé
+Chambre médicalisée,Dépendantes,3,3.0,2.0,4.0,3.0,4.0,2.0,2.0,3.0,3.0,7,836,femme,Prof.Interméd.
+Chambre médicalisée,Semi-valides,1,1.0,4.0,3.0,4.0,3.0,2.0,2.0,4.0,4.0,7,37,homme,"Inactif, Autre"
+Chambre Individuelle,Semi-valides,2,3.0,3.0,2.0,3.0,1.0,1.0,2.0,4.0,1.0,6,677,homme,Agriculteur
+Chambre médicalisée,Semi-valides,2,2.0,3.0,4.0,4.0,2.0,3.0,1.0,4.0,4.0,7,365,femme,Cadre Moyen
+Maison d'hôte/Studio,Valides,2,4.0,2.0,1.0,1.0,2.0,2.0,2.0,4.0,3.0,6,263,femme,Prof.Interméd.
+Chambre Individuelle,Dépendantes,4,2.0,2.0,1.0,2.0,1.0,1.0,2.0,3.0,1.0,4,736,femme,Prof.Interméd.
+Maison d'hôte/Studio,Semi-valides,5,2.0,2.0,1.0,1.0,1.0,1.0,1.0,2.0,3.0,4,895,femme,Employé
+Chambre médicalisée,Dépendantes,3,3.0,3.0,3.0,4.0,4.0,2.0,3.0,1.0,4.0,6,857,homme,Cadre Moyen
+Accueil temporaire,Valides,5,3.0,3.0,4.0,1.0,1.0,2.0,1.0,1.0,4.0,6,481,homme,"Inactif, Autre"
+Accueil temporaire,Dépendantes,2,4.0,3.0,4.0,1.0,2.0,2.0,3.0,1.0,1.0,7,736,homme,Cadre Supérieur
+Maison d'hôte/Studio,Semi-valides,4,4.0,2.0,4.0,2.0,1.0,2.0,3.0,4.0,4.0,8,318,femme,Cadre Moyen
+Accueil temporaire,Valides,1,1.0,4.0,3.0,2.0,1.0,2.0,1.0,1.0,2.0,5,2,femme,Ouvrier
+Maison d'hôte/Studio,Valides,5,4.0,1.0,2.0,2.0,2.0,2.0,2.0,3.0,4.0,4,595,femme,Agriculteur
+Chambre Individuelle,Semi-valides,1,3.0,3.0,1.0,2.0,3.0,1.0,1.0,2.0,4.0,6,710,femme,Employé
+Maison d'hôte/Studio,Semi-valides,5,3.0,3.0,1.0,1.0,1.0,2.0,2.0,2.0,4.0,5,8,femme,Commerc.Artisan
+Chambre Individuelle,Valides,5,3.0,3.0,1.0,4.0,1.0,2.0,2.0,4.0,3.0,6,503,femme,Ouvrier
+Chambre Individuelle,Dépendantes,2,4.0,4.0,4.0,4.0,2.0,2.0,2.0,4.0,4.0,10,904,homme,Prof.Interméd.
+Chambre médicalisée,Valides,2,3.0,2.0,4.0,4.0,1.0,2.0,2.0,3.0,2.0,7,258,homme,Employé
+Chambre Individuelle,Semi-valides,1,3.0,2.0,2.5,3.0,2.0,2.0,2.0,4.0,3.0,5,724,femme,Agriculteur
+Accueil temporaire,Dépendantes,5,3.0,4.0,4.0,1.0,1.0,1.0,3.0,1.0,1.0,7,634,femme,Prof.Interméd.
+Chambre Individuelle,Valides,5,3.0,2.0,2.0,4.0,4.0,2.0,2.0,4.0,4.0,6,774,homme,Employé
+Accueil temporaire,Semi-valides,1,1.0,4.0,4.0,1.0,1.0,2.0,2.0,1.0,2.0,6,196,homme,Employé
+Accueil temporaire,Semi-valides,3,3.0,3.0,1.0,2.0,1.0,2.0,1.0,1.0,3.0,5,102,homme,Prof.Interméd.
+Accueil temporaire,Dépendantes,4,1.0,4.0,4.0,3.0,1.0,4.0,1.0,3.0,1.0,7,688,homme,Cadre Moyen
+Chambre médicalisée,Semi-valides,2,3.0,4.0,2.0,3.0,3.0,2.0,2.0,3.0,1.0,3,106,homme,Employé
+Accueil temporaire,Valides,2,1.0,4.0,4.0,1.0,1.0,2.0,1.0,1.0,3.0,5,381,femme,Ouvrier
+Maison d'hôte/Studio,Semi-valides,1,3.0,2.0,4.0,1.0,2.0,2.0,1.0,3.0,4.0,6,820,homme,Cadre Supérieur
+Accueil temporaire,Semi-valides,3,3.0,3.0,4.0,1.0,2.0,2.0,1.0,2.0,1.0,6,51,homme,Cadre Supérieur
+Chambre Individuelle,Valides,1,1.0,2.0,2.0,1.0,1.0,1.0,2.0,4.0,1.0,4,241,homme,Employé
+Maison d'hôte/Studio,Dépendantes,4,4.0,3.0,4.0,2.0,3.0,2.0,2.0,4.0,2.0,8,940,homme,Commerc.Artisan
+Accueil temporaire,Valides,1,1.0,4.0,4.0,1.0,3.0,3.0,1.0,1.0,1.0,6,580,femme,Employé
+Chambre médicalisée,Semi-valides,5,2.0,3.0,4.0,3.0,1.0,2.0,1.0,1.0,3.0,5,391,homme,Prof.Interméd.
+Maison d'hôte/Studio,Valides,1,4.0,2.0,2.0,2.0,3.0,1.0,2.0,4.0,4.0,6,318,homme,Cadre Moyen
+Maison d'hôte/Studio,Valides,5,3.0,3.0,2.5,4.0,1.0,2.0,2.0,3.0,4.0,8,966,femme,Commerc.Artisan
+Chambre médicalisée,Dépendantes,1,3.0,4.0,3.0,4.0,2.0,1.0,3.0,4.0,1.0,9,588,femme,Ouvrier
+Accueil temporaire,Valides,2,3.0,1.0,2.0,1.0,2.0,2.0,2.0,2.0,3.0,3,770,femme,Cadre Moyen
+Accueil temporaire,Semi-valides,2,1.0,3.0,4.0,1.0,2.0,2.0,2.0,1.0,2.0,5,840,femme,Commerc.Artisan
+Chambre Individuelle,Semi-valides,2,2.0,3.0,1.0,3.0,2.0,2.0,2.0,4.0,4.0,6,584,homme,Ouvrier
+Chambre médicalisée,Valides,4,3.0,3.0,2.0,2.0,1.0,2.0,2.0,4.0,3.0,2,203,femme,"Inactif, Autre"
+Chambre Individuelle,Valides,1,2.0,2.0,2.0,1.0,1.0,2.0,2.0,3.0,1.0,4,83,femme,Commerc.Artisan
+Maison d'hôte/Studio,Semi-valides,2,3.0,2.0,2.0,2.0,1.0,3.0,3.0,2.0,4.0,6,369,homme,Cadre Moyen
+Chambre Individuelle,Dépendantes,2,3.0,2.0,1.0,3.0,2.0,2.0,2.0,4.0,2.0,6,964,femme,Cadre Supérieur
+Accueil temporaire,Semi-valides,5,3.0,3.0,3.0,1.0,1.0,2.0,1.0,1.0,1.0,5,792,homme,Commerc.Artisan
+Accueil temporaire,Semi-valides,3,2.0,4.0,4.0,1.0,1.0,4.0,1.0,4.0,2.0,8,80,homme,Prof.Interméd.
+Chambre Individuelle,Dépendantes,2,3.0,4.0,4.0,2.0,1.0,2.0,3.0,1.0,4.0,7,607,femme,Cadre Supérieur
+Maison d'hôte/Studio,Valides,3,3.0,1.0,2.0,1.0,1.0,4.0,2.0,4.0,4.0,3,880,homme,Employé
+Maison d'hôte/Studio,Valides,5,3.0,3.0,4.0,1.0,2.0,2.0,3.0,4.0,3.0,8,142,femme,Cadre Moyen
+Chambre Individuelle,Valides,1,2.0,3.0,1.0,1.0,2.0,2.0,3.0,3.0,1.0,6,748,homme,"Inactif, Autre"
+Accueil temporaire,Valides,1,2.0,4.0,4.0,2.0,2.0,2.0,2.0,3.0,2.0,6,321,homme,Agriculteur
+Accueil temporaire,Semi-valides,4,4.0,4.0,2.0,2.0,2.0,4.0,2.0,1.0,1.0,3,234,homme,Agriculteur
+Maison d'hôte/Studio,Semi-valides,4,3.0,2.0,2.5,2.0,1.0,3.0,2.0,4.0,4.0,6,674,femme,Agriculteur
+Accueil temporaire,Semi-valides,5,2.0,2.0,4.0,1.0,1.0,1.0,2.0,2.0,1.0,8,691,femme,Ouvrier
+Chambre Individuelle,Valides,1,3.0,2.0,2.0,2.0,2.0,1.0,2.0,3.0,3.0,7,613,femme,Cadre Moyen
+Chambre Individuelle,Valides,5,2.0,2.0,2.0,2.0,1.0,3.0,1.0,3.0,3.0,5,478,femme,Cadre Supérieur
+Chambre Individuelle,Dépendantes,5,2.0,3.0,1.0,3.0,4.0,2.0,2.0,3.0,4.0,5,851,femme,Employé
+Maison d'hôte/Studio,Dépendantes,3,3.0,2.0,1.0,2.0,1.0,1.0,2.0,3.0,1.0,5,187,femme,Prof.Interméd.
