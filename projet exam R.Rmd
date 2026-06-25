@@ -1,0 +1,404 @@
+---
+title: "Anaylse de satisfaction des retraités"
+author: "Hayette M"
+date: "2026-02-22"
+output: html_document
+---
+
+```{r}
+install.packages("readxl")
+```
+
+```{r}
+library(readxl)
+```
+```{r}
+
+```
+
+
+
+```{r}
+# 1.1 Importation
+data_retraite <- read_excel("C:/Users/hayet/Downloads/FRANCE/COURS/R/R Prof 2/Retraite.xlsx")
+head(data_retraite)
+```
+```{r}
+str(data_retraite)
+```
+```{r}
+summary(data_retraite)
+```
+```{r}
+# Compter les NA par colonne
+colSums(is.na(data_retraite))
+```
+
+```{r}
+## Analyse descriptive des variables
+## 2.1 Variables catégorielles
+
+## Objectif : comprendre la répartition des catégories.
+
+# Comptage des catégories
+table(data_retraite$Formule)
+table(data_retraite$Public)
+table(data_retraite$SEXE)
+table(data_retraite$CSP)
+
+# Pourcentage
+prop.table(table(data_retraite$Formule))*100
+prop.table(table(data_retraite$SEXE))*100
+```
+```{r}
+# Vérifier les noms des colonnes
+names(data_retraite)
+```
+
+
+```{r}
+#1.3 Renommer les colonnes pour enlever les numéros et espaces
+names(data_retraite) <- c("Formule", "Public", "Activité", "Accueil", "Soins_Qualité",
+                     "Compétence_Personnel", "Disponibilité_Personnel", "Réconfort",
+                     "Qualité_Restauration", "Hygiène", "Confort_Chambre", "Services_Annexes",
+                     "SATISFACTION", "PRIX_PENSION", "SEXE", "CSP")
+
+# Conversion des variables qualitatives en "Facteurs" pour que R les reconnaisse comme catégories
+data_retraite$SEXE <- factor(data_retraite$SEXE, 
+                             levels = c("Un homme", "Une femme"), 
+                             labels = c("homme", "femme"))
+
+data_retraite$Formule <- as.factor(data_retraite$Formule)
+data_retraite$Public <- as.factor(data_retraite$Public)
+
+summary(data_retraite$SEXE)
+```
+
+```{r}
+head(data_retraite)
+```
+```{r}
+names(data_retraite)
+```
+
+
+
+
+```{r}
+#2.2 Variables numériques
+
+#Objectif : résumé des notes et prix
+
+# Variables numériques importantes
+numeriques <- data_retraite[, c("Activité", "Accueil", "Soins_Qualité", "Compétence_Personnel",
+                           "Disponibilité_Personnel", "Réconfort", "Qualité_Restauration",
+                           "Hygiène", "Confort_Chambre", "Services_Annexes", "SATISFACTION", "PRIX_PENSION")]
+
+summary(numeriques)
+```
+```{r}
+# Graphique en barres pour le Sexe
+barplot(table(data_retraite$SEXE), 
+        col = c("lightblue", "pink"), 
+        main = "Répartition des résidents par sexe",
+        ylim = c(0, 200)) 
+```
+```{r}
+# Charger ggplot2 si ce n'est pas déjà fait
+library(ggplot2)
+
+# -----------------------------
+# 1. Répartition par sexe
+# -----------------------------
+ggplot(data_retraite, aes(x = SEXE, fill = SEXE)) +
+  geom_bar() +
+  labs(title = "Répartition des résidants par sexe", x = "Sexe", y = "Nombre de résidents") +
+  scale_fill_manual(values = c("skyblue", "pink")) +
+  theme_minimal()
+
+# -----------------------------
+# 2. Répartition par type de Public
+# -----------------------------
+ggplot(data_retraite, aes(x = Public, fill = Public)) +
+  geom_bar() +
+  labs(title = "Répartition par type de Public", x = "Public", y = "Nombre de résidents") +
+  scale_fill_manual(values = c("lightgreen", "orange", "red")) +
+  theme_minimal()
+
+# -----------------------------
+# 3. Répartition par Formule d'hébergement
+# -----------------------------
+ggplot(data_retraite, aes(x = Formule, fill = Formule)) +
+  geom_bar() +
+  labs(title = "Répartition par Formule d'hébergement", x = "Formule", y = "Nombre de résidents") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme_minimal()
+
+# -----------------------------
+# 4. Participation aux activités (histogramme)
+# -----------------------------
+ggplot(data_retraite, aes(x = Activité)) +
+  geom_histogram(binwidth = 1, fill = "lightblue", color = "black") +
+  labs(title = "Participation aux activités", x = "Nombre d'activités par semaine", y = "Nombre de résidents") +
+  theme_minimal()
+
+# -----------------------------
+# 5. Répartition par CSP
+# -----------------------------
+ggplot(data_retraite, aes(x = CSP, fill = CSP)) +
+  geom_bar() +
+  labs(title = "Répartition par catégorie socio-professionnelle (CSP)", x = "CSP", y = "Nombre de résidents") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme_minimal()
+
+ggplot(data_retraite, aes(x=PRIX_PENSION)) +
+  geom_histogram(binwidth=50, fill="lightblue", color="black") +
+  labs(title="Distribution du prix de la pension", x="Prix (euros)", y="Nombre de résidents")
+```
+
+```{r}
+# Tableau des effectifs pour le Sexe
+table(data_retraite$SEXE)
+# Graphique
+barplot(table(data_retraite$SEXE), col=c("skyblue", "pink"), main="Répartition Hommes/Femmes")
+
+# Tableau des effectifs pour la CSP
+table(data_retraite$CSP)
+# Graphique
+par(mar=c(10,4,4,2)) # On agrandit la marge du bas pour les noms longs
+barplot(table(data_retraite$CSP), col="wheat", las=2, main="Répartition par CSP")
+```
+
+
+```{r}
+# Exemple : résumé statistique
+summary(retraite$SATISFACTION)
+table(retraite$SEXE)
+boxplot(SATISFACTION ~ SEXE, data=retraite,
+        col = c("lightblue", "pink"),
+        main = "Satisfaction selon le Sexe",
+        xlab = "Sexe", ylab = "Note de Satisfaction")
+
+# Calcul des moyennes par groupe
+aggregate(SATISFACTION ~ SEXE, data = data_retraite, mean, na.rm = TRUE)
+
+
+```
+```{r}
+ggplot(data_retraite, aes(x=SATISFACTION)) +
+  geom_histogram(binwidth=1, fill="lightblue", color="black") +
+  labs(title="Distribution de la satisfaction", x="Note de satisfaction", y="Nombre de résidents")
+```
+
+
+```{r}
+paste("Bien que la satisfaction médiane soit identique (5/10), les avis féminins sont plus hétérogènes. La boîte rose est plus étirée vers le bas : cela montre que le mécontentement est plus fréquent et plus marqué chez les femmes que chez les hommes.")
+```
+```{r}
+ggplot(data_retraite, aes(y=SATISFACTION)) +
+  geom_boxplot(fill="#FFCC66") +
+  labs(title="Dispersion des notes de satisfaction", y="Note de satisfaction")
+```
+
+
+```{r}
+# 1. On transforme en facteur
+data_retraite$CSP <- as.factor(data_retraite$CSP)
+
+# 2. On regarde les effectifs
+table(data_retraite$CSP)
+
+# 3. Le graphique (Barplot)
+# On ajuste les marges pour que les noms (Agriculteur, Cadre...) ne soient pas coupés
+par(mar=c(10, 4, 4, 2)) 
+barplot(table(data_retraite$CSP), 
+        las = 2, 
+        col = "orange", 
+        main = "Répartition par CSP",
+        ylab = "Nombre de résidents")
+```
+```{r}
+# III. Étude de la Satisfaction Générale (Partie 3.3)
+
+# Boxplot Satisfaction / CSP
+boxplot(data_retraite$SATISFACTION ~ data_retraite$CSP, 
+        las = 2, 
+        col = rainbow(7), 
+        main = "Satisfaction selon la CSP",
+        ylab = "Note / 10")
+```
+```{r}
+paste("Les groupes les plus satisfaits : Les Agriculteurs, les Ouvriers et les cadres Supérieurs affichent les médianes les plus hautes (5/10). Il est intéressant de noter que l'établissement réussit à satisfaire autant les anciens ouvriers que les cadres supérieurs.
+
+Les groupes les plus critiques : Les Cadres Moyens, les Artisans et les Employés sont globalement moins satisfaits, avec une médiane de 4/10.
+
+La plus forte variabilité : La catégorie Prof. Intermédiaires (en rouge à droite) présente la boîte la plus grande et la moustache la plus haute (jusqu'à 10/10). C'est un public "extrême" : certains adorent, d'autres détestent.")
+```
+```{r}
+# On remet les marges normales
+par(mar=c(5, 4, 4, 2))
+
+# Comparaison des moyennes
+aggregate(SATISFACTION ~ Public, data = data_retraite, mean)
+
+# Graphique
+boxplot(data_retraite$SATISFACTION ~ data_retraite$Public, 
+        col = c("green", "yellow", "red"),
+        main = "Satisfaction selon le niveau de dépendance", 
+        ylab= "Satisfaction",
+        xlab = "Niveau de dépendance")
+```
+```{r}
+paste("L'analyse montre que la satisfaction n'est pas uniforme. Si l'établissement satisfait bien les résidents dépendants, anciens ouvriers ou agriculteurs, un point de vigilance apparaît sur les résidents valides et le public féminin. Ces derniers affichent des notes plus basses et une plus grande variabilité, suggérant des attentes non comblées en termes d'autonomie ou de services spécifiques.")
+```
+
+```{r}
+# IV. Évaluation de la Qualité des Services
+
+# 1. Calculer la moyenne de chaque service
+moyennes_services <- colMeans(data_retraite[, 4:12], na.rm = TRUE)
+
+# 2. Trier pour voir le meilleur et le pire
+sort(moyennes_services)
+```
+```{r}
+paste("L'analyse des scores moyens (notés de 1 à 4) permet d'identifier les piliers de l'établissement. Les services de [Nom du service avec la plus haute note] affichent un niveau de satisfaction solide (Note : X/4). À l'inverse, le service [Nom du service avec la plus basse note] apparaît comme le maillon faible de la prestation hôtelière")
+```
+
+
+```{r}
+
+```
+
+
+
+```{r}
+# Préparation des données
+moyennes <- c(1.85, 1.90, 1.99, 2.35, 2.59, 2.65, 2.69, 2.75, 2.76)
+noms <- c("Hygiène", "Réconfort", "Restauration", "Dispo. Pers.", 
+          "Accueil", "Chambre", "Soins", "Annexes", "Compétence")
+
+# Création du graphique
+barplot(moyennes, names.arg = noms, las = 2, col = c(rep("red", 3), rep("orange", 3), rep("green", 3)),
+        main = "Moyenne de satisfaction par service",
+        ylim = c(0, 4), ylab = "Note sur 4")
+abline(h = 2, col = "black", lty = 2) # Ligne de vigilance
+
+```
+
+```{r}
+cor_services <- cor(data_retraite[, 4:12], data_retraite$SATISFACTION, use="complete.obs")
+cor_services
+```
+
+
+
+```{r}
+#V. ANALYSE DU PRIX ET DES REVENUS
+
+#5.1
+
+summary(data_retraite$PRIX_PENSION)
+# Et pour l'écart-type :
+sd(data_retraite$PRIX_PENSION, na.rm = TRUE)
+
+
+```
+```{r}
+plot(data_retraite$PRIX_PENSION, data_retraite$SATISFACTION, 
+     main="Lien entre Prix et Satisfaction",
+     xlab="Prix mensuel (€)", ylab="Satisfaction (0-10)",
+     pch=19, col="blue")
+# Ajout d'une ligne de tendance
+abline(lm(SATISFACTION ~ PRIX_PENSION, data=data_retraite), col="red")
+```
+
+
+```{r}
+
+# 5.2. Test d'hypothèse : existe-t-il un lien entre le prix payé et la satisfaction ?
+
+
+#5.1. Corrélation entre Prix et Satisfaction
+# Lien entre le Prix mensuel et la Satisfaction globale
+cor(data_retraite$PRIX_PENSION, data_retraite$SATISFACTION, use="complete.obs")
+
+paste("Nous avons testé si le montant de la pension influence la satisfaction des résidents.
+
+    Le chiffre : La corrélation est de 0,095.
+
+    Le constat : Ce score est proche de 0, ce qui prouve l'absence totale de lien.
+
+    Conclusion : Le prix n'est pas un facteur explicatif. Payer plus cher n'apporte pas plus de satisfaction. Les problèmes de l'établissement (Hygiène, Restauration) sont subis par tous les résidents, quel que soit leur budget.")
+```
+```{r}
+# Modèle simple : Satisfaction ~ Prix de la pension
+modele_uni <- lm(SATISFACTION ~ PRIX_PENSION, data = data_retraite)
+summary(modele_uni)
+```
+
+
+
+```{r}
+#5.3. Modélisation multivariée
+modele_floralies <- lm(SATISFACTION ~ SEXE + CSP + Public + PRIX_PENSION, data = data_retraite)
+
+# Affichage des résultats détaillés
+summary(modele_floralies)
+```
+
+
+```{r}
+
+
+# VI.2. Test ANOVA : influence du Public sur la satisfaction
+anova_public <- aov(SATISFACTION ~ Public, data = retraite)
+summary(anova_public)
+
+
+```
+```{r}
+# VI.3. Test post-hoc de Tukey : identifier les différences significatives
+tukey_public <- TukeyHSD(anova_public)
+tukey_public
+
+# Visualisation du test post-hoc
+plot(tukey_public)
+```
+
+
+
+
+
+```{r}
+# Histogramme de la satisfaction
+hist(retraite$SATISFACTION, main="Distribution de la Satisfaction", xlab="Satisfaction", col="lightblue")
+
+# Boxplot de PRIX PENSION par Formule
+boxplot(PRIX_PENSION ~ Formule, data=retraite, main="Prix par Formule", xlab="Formule", ylab="Prix Pension")
+```
+```{r}
+# Modèle linéaire : Satisfaction en fonction de Public, CSP, Sexe et Prix
+modele <- lm(SATISFACTION ~ SEXE + CSP + Public + PRIX_PENSION, data = retraite)
+
+# 1. Normalité des résidus (Shapiro-Wilk)
+shapiro_test <- shapiro.test(resid(modele))
+shapiro_test
+
+
+```
+```{r}
+# 2. Multicolinéarité (VIF)
+library(car)  # Charger le package pour VIF
+vif_values <- vif(modele)
+vif_values
+
+
+```
+```{r}
+# 3. Homoscédasticité (Breusch-Pagan)
+library(lmtest)  # Charger le package pour le test BP
+bp_test <- bptest(modele)
+bp_test
+```
+

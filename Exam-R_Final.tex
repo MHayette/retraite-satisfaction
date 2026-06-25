@@ -1,0 +1,1344 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Satisfaction des résidents en maison de retraite},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Satisfaction des résidents en maison de retraite}
+\author{}
+\date{\vspace{-2.5em}2026-02-21}
+
+\begin{document}
+\maketitle
+
+Nom jeu de donnée : Retraite Thème : Satisfaction des résidents en
+maison de retraite SUJET : Analyse des déterminants de la satisfaction
+globale en maison de retraite
+
+Réalisée par :
+
+MEDESSOUKOU Hayette AMADA Soibrati METCHUM Davila
+
+\subsection{Introduction}\label{introduction}
+
+Ce projet R vise à analyser la satisfaction des résidents dans un
+établissement en fonction de leur profil (type de public, sexe,
+catégorie socio-professionnelle) et des services proposés (accueil,
+soins, hygiène, restauration, confort, etc.). L'objectif est de
+comprendre quels facteurs influencent le plus la satisfaction et
+d'identifier les points d'amélioration pour la direction. Les analyses
+combinent statistiques descriptives, visualisations graphiques et
+modélisation.
+
+Partie 1 : Préparation et Exploration (Le ``Data Cleaning'')
+
+1-Importation : Chargez le fichier Retraite.csv et renommez les
+colonnes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Importation du package}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(readxl)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"readxl"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : readxl
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: le package 'readxl' a été compilé avec la version R 4.5.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readxl)}
+
+\CommentTok{\#Chargement de données}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"C:/Users/hayet/Downloads/FRANCE/COURS/R/R Prof 2/Retraite.xlsx"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 16
+##   `2. Formule`         `3. Public` `6. Activité` `8. Accueil` `9. Soins Qualité`
+##   <chr>                <chr>               <dbl>        <dbl>              <dbl>
+## 1 Accueil temporaire   Valides                 2            1                  4
+## 2 Accueil temporaire   Valides                 3            1                  3
+## 3 Maison d'hôte/Studio Valides                 5            4                  1
+## 4 Accueil temporaire   Valides                 1            2                  4
+## 5 Maison d'hôte/Studio Valides                 5            3                  3
+## 6 Chambre Individuelle Valides                 5            1                  1
+## # i 11 more variables: `10. Compétence Personnel` <dbl>,
+## #   `11. Disponibilité Personnel` <dbl>, `12. Réconfort` <dbl>,
+## #   `13. Qualité Restauration` <dbl>, `14. Hygiène` <dbl>,
+## #   `15. Confort Chambre` <dbl>, `16. Services Annexes` <dbl>,
+## #   `17. SATISFACTION` <dbl>, `18. PRIX PENSION` <dbl>, `20. SEXE` <chr>,
+## #   `21. CSP` <chr>
+\end{verbatim}
+
+Le jeu de données comprend 300 résidents et 16 variables. Il contient :
+
+\begin{itemize}
+\tightlist
+\item
+  Le profil des résidents (Sexe, CSP, type de Public) ;
+\item
+  L'évaluation de plusieurs services (Accueil, Soins, Hygiène,
+  Restauration, Réconfort, Confort de la chambre, Services annexes,
+  etc.) ;
+\item
+  Le prix de la pension ;
+\item
+  La note globale de satisfaction, qui constitue la variable à
+  expliquer.
+\end{itemize}
+
+Certaines variables présentent des valeurs manquantes, notamment
+Réconfort, Confort de la chambre et Services annexes, ce qui devra être
+pris en compte dans l'analyse.
+
+\subsubsection{a - Renommage des
+colonnes}\label{a---renommage-des-colonnes}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Renommage des colonnes}
+\FunctionTok{names}\NormalTok{(df) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Formule"}\NormalTok{, }\StringTok{"Public"}\NormalTok{, }\StringTok{"Activite"}\NormalTok{, }\StringTok{"Accueil"}\NormalTok{, }\StringTok{"Soins\_Qualite"}\NormalTok{,}
+                     \StringTok{"Competence\_Personnel"}\NormalTok{, }\StringTok{"Disponibilite\_Personnel"}\NormalTok{, }\StringTok{"Reconfort"}\NormalTok{,}
+                     \StringTok{"Qualite\_Restauration"}\NormalTok{, }\StringTok{"Hygiene"}\NormalTok{, }\StringTok{"Confort\_Chambre"}\NormalTok{, }\StringTok{"Services\_Annexes"}\NormalTok{,}
+                     \StringTok{"Satisfaction"}\NormalTok{, }\StringTok{"PRIX\_PENSION"}\NormalTok{, }\StringTok{"Sexe"}\NormalTok{, }\StringTok{"CSP"}\NormalTok{)}
+
+\CommentTok{\# Conversion des variables qualitatives en "Facteurs" pour que R les reconnaisse comme catégories}
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{Sexe }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sexe, }
+                             \AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Un homme"}\NormalTok{, }\StringTok{"Une femme"}\NormalTok{), }
+                             \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"homme"}\NormalTok{, }\StringTok{"femme"}\NormalTok{))}
+
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{Formule }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Formule)}
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{Public }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Public)}
+
+\FunctionTok{summary}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sexe)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## homme femme 
+##   140   160
+\end{verbatim}
+
+\subsubsection{b- Vérifier les valeurs
+manquantes}\label{b--vuxe9rifier-les-valeurs-manquantes}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Compter les NA par colonne}
+\FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(df))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 Formule                  Public                Activite 
+##                       0                       0                       0 
+##                 Accueil           Soins_Qualite    Competence_Personnel 
+##                       3                       2                       6 
+## Disponibilite_Personnel               Reconfort    Qualite_Restauration 
+##                       8                       8                       5 
+##                 Hygiene         Confort_Chambre        Services_Annexes 
+##                       4                      10                      13 
+##            Satisfaction            PRIX_PENSION                    Sexe 
+##                       0                       0                       0 
+##                     CSP 
+##                       0
+\end{verbatim}
+
+*Interpretation Ici on constate que les variables de services
+comtiennent des valeurs manquantes. De ce fait au lieu de les supprimer,
+on va remplacer ces valeurs manquantes par la médiane.
+
+\subsubsection{b- Imputation par la médiane (variables
+numériques)}\label{b--imputation-par-la-muxe9diane-variables-numuxe9riques}
+
+\subsection{3- Gestion des données
+manquantes}\label{gestion-des-donnuxe9es-manquantes}
+
+Afin d'éviter la perte d'informations liée à la suppression des
+observations incomplètes, nous avons appliqué une imputation par la
+médiane. Cette méthode est plus robuste que la moyenne, car elle est
+moins sensible aux valeurs extrêmes, notamment pour la variable Prix de
+la pension.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fonction pour imputer par la médiane}
+\NormalTok{imputer\_mediane }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  x[}\FunctionTok{is.na}\NormalTok{(x)] }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(x, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+  \FunctionTok{return}\NormalTok{(x)}
+\NormalTok{\}}
+
+\CommentTok{\# Colonnes numériques existantes}
+\NormalTok{cols\_numeriques }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Accueil"}\NormalTok{, }\StringTok{"Soins\_Qualite"}\NormalTok{, }\StringTok{"Competence\_Personnel"}\NormalTok{, }
+                     \StringTok{"Disponibilite\_Personnel"}\NormalTok{, }\StringTok{"Reconfort"}\NormalTok{, }
+                     \StringTok{"Qualite\_Restauration"}\NormalTok{, }\StringTok{"Hygiene"}\NormalTok{, }\StringTok{"Confort\_Chambre"}\NormalTok{, }
+                     \StringTok{"Services\_Annexes"}\NormalTok{)}
+
+\CommentTok{\# Imputation}
+\NormalTok{df[cols\_numeriques] }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(df[cols\_numeriques], imputer\_mediane)}
+
+\CommentTok{\# Vérification finale}
+\FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(df))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 Formule                  Public                Activite 
+##                       0                       0                       0 
+##                 Accueil           Soins_Qualite    Competence_Personnel 
+##                       0                       0                       0 
+## Disponibilite_Personnel               Reconfort    Qualite_Restauration 
+##                       0                       0                       0 
+##                 Hygiene         Confort_Chambre        Services_Annexes 
+##                       0                       0                       0 
+##            Satisfaction            PRIX_PENSION                    Sexe 
+##                       0                       0                       0 
+##                     CSP 
+##                       0
+\end{verbatim}
+
+2-Aperçu et Structure des données
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [300 x 16] (S3: tbl_df/tbl/data.frame)
+##  $ Formule                : Factor w/ 4 levels "Accueil temporaire",..: 1 1 4 1 4 2 3 1 1 4 ...
+##  $ Public                 : Factor w/ 3 levels "Dépendantes",..: 3 3 3 3 3 3 1 3 3 3 ...
+##  $ Activite               : num [1:300] 2 3 5 1 5 5 4 5 3 3 ...
+##  $ Accueil                : num [1:300] 1 1 4 2 3 1 3 2 1 3 ...
+##  $ Soins_Qualite          : num [1:300] 4 3 1 4 3 1 3 4 4 2 ...
+##  $ Competence_Personnel   : num [1:300] 4 1 2 4 4 2 4 4 2 2 ...
+##  $ Disponibilite_Personnel: num [1:300] 1 2 1 3 2 4 4 1 2 1 ...
+##  $ Reconfort              : num [1:300] 1 2 1 2 3 2 2 1 2 2 ...
+##  $ Qualite_Restauration   : num [1:300] 2 2 2 2 2 2 2 2 2 2 ...
+##  $ Hygiene                : num [1:300] 1 1 2 1 3 2 2 2 1 2 ...
+##  $ Confort_Chambre        : num [1:300] 1 1 3 1 3 3 3 1 4 4 ...
+##  $ Services_Annexes       : num [1:300] 2 2 4 1 4 3 2 1 2 4 ...
+##  $ Satisfaction           : num [1:300] 3 4 3 4 7 3 2 3 4 4 ...
+##  $ PRIX_PENSION           : num [1:300] 788 642 176 951 697 896 681 158 41 918 ...
+##  $ Sexe                   : Factor w/ 2 levels "homme","femme": 1 1 2 1 2 2 2 1 1 1 ...
+##  $ CSP                    : chr [1:300] "Employé" "Agriculteur" "Ouvrier" "Prof.Interméd." ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 16
+##   Formule             Public Activite Accueil Soins_Qualite Competence_Personnel
+##   <fct>               <fct>     <dbl>   <dbl>         <dbl>                <dbl>
+## 1 Accueil temporaire  Valid~        2       1             4                    4
+## 2 Accueil temporaire  Valid~        3       1             3                    1
+## 3 Maison d'hôte/Stud~ Valid~        5       4             1                    2
+## 4 Accueil temporaire  Valid~        1       2             4                    4
+## 5 Maison d'hôte/Stud~ Valid~        5       3             3                    4
+## 6 Chambre Individuel~ Valid~        5       1             1                    2
+## # i 10 more variables: Disponibilite_Personnel <dbl>, Reconfort <dbl>,
+## #   Qualite_Restauration <dbl>, Hygiene <dbl>, Confort_Chambre <dbl>,
+## #   Services_Annexes <dbl>, Satisfaction <dbl>, PRIX_PENSION <dbl>, Sexe <fct>,
+## #   CSP <chr>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Sélectionner uniquement les variables de services}
+\NormalTok{services\_cols }\OtherTok{\textless{}{-}}\NormalTok{ df[, }\DecValTok{4}\SpecialCharTok{:}\DecValTok{12}\NormalTok{]}
+\NormalTok{services\_cols}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 300 x 9
+##    Accueil Soins_Qualite Competence_Personnel Disponibilite_Personnel Reconfort
+##      <dbl>         <dbl>                <dbl>                   <dbl>     <dbl>
+##  1       1             4                    4                       1         1
+##  2       1             3                    1                       2         2
+##  3       4             1                    2                       1         1
+##  4       2             4                    4                       3         2
+##  5       3             3                    4                       2         3
+##  6       1             1                    2                       4         2
+##  7       3             3                    4                       4         2
+##  8       2             4                    4                       1         1
+##  9       1             4                    2                       2         2
+## 10       3             2                    2                       1         2
+## # i 290 more rows
+## # i 4 more variables: Qualite_Restauration <dbl>, Hygiene <dbl>,
+## #   Confort_Chambre <dbl>, Services_Annexes <dbl>
+\end{verbatim}
+
+*Interprétation des résultats A-Les variables de service (Accueil,
+Soins, Restauration, etc.) sont notées sur une échelle de 1 à 5. B-La
+satisfaction semble être notée sur une échelle allant jusqu'à 10 C-Le
+prix de la pension varie fortement( de 2 à 994 Unités monétaires)
+
+\subsubsection{Partie 2: Analyse Descriptive et
+Corrélations}\label{partie-2-analyse-descriptive-et-corruxe9lations}
+
+\subsubsection{1- Analyse Descriptive}\label{analyse-descriptive}
+
+\subsection{a) Variables numériques (moyenne, médiane, min,
+max)}\label{a-variables-numuxe9riques-moyenne-muxe9diane-min-max}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Résumé des variables numériques}
+\FunctionTok{summary}\NormalTok{(df[cols\_numeriques])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     Accueil      Soins_Qualite   Competence_Personnel Disponibilite_Personnel
+##  Min.   :1.000   Min.   :1.000   Min.   :1.00         Min.   :1.000          
+##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.00         1st Qu.:1.000          
+##  Median :3.000   Median :3.000   Median :2.50         Median :2.000          
+##  Mean   :2.593   Mean   :2.697   Mean   :2.75         Mean   :2.337          
+##  3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:4.00         3rd Qu.:3.000          
+##  Max.   :4.000   Max.   :4.000   Max.   :4.00         Max.   :4.000          
+##    Reconfort   Qualite_Restauration    Hygiene      Confort_Chambre
+##  Min.   :1.0   Min.   :1.000        Min.   :1.000   Min.   :1.00   
+##  1st Qu.:1.0   1st Qu.:2.000        1st Qu.:1.000   1st Qu.:2.00   
+##  Median :2.0   Median :2.000        Median :2.000   Median :3.00   
+##  Mean   :1.9   Mean   :1.993        Mean   :1.857   Mean   :2.66   
+##  3rd Qu.:2.0   3rd Qu.:2.000        3rd Qu.:2.000   3rd Qu.:4.00   
+##  Max.   :4.0   Max.   :4.000        Max.   :4.000   Max.   :4.00   
+##  Services_Annexes
+##  Min.   :1.000   
+##  1st Qu.:2.000   
+##  Median :3.000   
+##  Mean   :2.763   
+##  3rd Qu.:4.000   
+##  Max.   :4.000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Satisfaction)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   1.000   3.750   5.000   4.847   6.000  10.000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{PRIX\_PENSION)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     2.0   219.2   489.0   484.5   728.2   994.0
+\end{verbatim}
+
+\subsubsection{Interprétation}\label{interpruxe9tation}
+
+Services (Accueil, Soins, Hygiène, Restauration\ldots) : les notes sont
+en moyenne autour de 2--3/4, donc globalement satisfaisantes, mais
+certaines prestations comme l'Hygiène ou la Restauration restent un peu
+faibles.
+
+Satisfaction globale : la médiane est 5/10, ce qui montre que les
+résidents ont des avis partagés.
+
+Prix de la pension : varie beaucoup selon la formule, médiane à
+\textasciitilde489 €, certains payent très peu, d'autres beaucoup plus.
+
+\subsubsection{1-b) Variables qualitatives (effectifs et
+proportions)}\label{b-variables-qualitatives-effectifs-et-proportions}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Sexe}
+\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sexe)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## homme femme 
+##   140   160
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sexe))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     homme     femme 
+## 0.4666667 0.5333333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Public}
+\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Public)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Dépendantes Semi-valides      Valides 
+##           69           95          136
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Public))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Dépendantes Semi-valides      Valides 
+##    0.2300000    0.3166667    0.4533333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Formule}
+\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Formule)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   Accueil temporaire Chambre Individuelle  Chambre médicalisée 
+##                   82                   70                   77 
+## Maison d'hôte/Studio 
+##                   71
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Formule))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   Accueil temporaire Chambre Individuelle  Chambre médicalisée 
+##            0.2733333            0.2333333            0.2566667 
+## Maison d'hôte/Studio 
+##            0.2366667
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# CSP}
+\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{CSP)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     Agriculteur     Cadre Moyen Cadre Supérieur Commerc.Artisan         Employé 
+##              43              48              41              27              48 
+##  Inactif, Autre         Ouvrier  Prof.Interméd. 
+##              29              26              38
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{CSP))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     Agriculteur     Cadre Moyen Cadre Supérieur Commerc.Artisan         Employé 
+##      0.14333333      0.16000000      0.13666667      0.09000000      0.16000000 
+##  Inactif, Autre         Ouvrier  Prof.Interméd. 
+##      0.09666667      0.08666667      0.12666667
+\end{verbatim}
+
+\subsection{2- Analyse graphique}\label{analyse-graphique}
+
+\subsubsection{a- Distribution de la
+satisfaction}\label{a--distribution-de-la-satisfaction}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Satisfaction, }\AttributeTok{main=}\StringTok{"Distribution de la Satisfaction"}\NormalTok{, }\AttributeTok{xlab=}\StringTok{"Satisfaction"}\NormalTok{, }\AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Exam-R_Final_files/figure-latex/unnamed-chunk-9-1.pdf}}
+Histogramme : montre la distribution globale des notes de satisfaction.
+
+\subsubsection{b) Boxplot du prix par
+formule}\label{b-boxplot-du-prix-par-formule}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(PRIX\_PENSION }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Formule, }\AttributeTok{data =}\NormalTok{ df,}
+        \AttributeTok{main =} \StringTok{"Prix de la pension par Formule"}\NormalTok{,}
+        \AttributeTok{xlab =} \StringTok{"Formule"}\NormalTok{,}
+        \AttributeTok{ylab =} \StringTok{"Prix de la pension"}\NormalTok{,}
+        \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"lightpink"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"lightblue"}\NormalTok{, }\StringTok{"lightyellow"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Exam-R_Final_files/figure-latex/unnamed-chunk-10-1.pdf}}
+Interprétation:
+
+\subsubsection{c) Boxplot de la satisfaction selon le type de
+Public}\label{c-boxplot-de-la-satisfaction-selon-le-type-de-public}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(Satisfaction }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Public, }\AttributeTok{data =}\NormalTok{ df,}
+        \AttributeTok{main =} \StringTok{"Satisfaction selon le type de Public"}\NormalTok{,}
+        \AttributeTok{xlab =} \StringTok{"Type de Public"}\NormalTok{,}
+        \AttributeTok{ylab =} \StringTok{"Satisfaction"}\NormalTok{,}
+        \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"lightpink"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"lightblue"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Exam-R_Final_files/figure-latex/unnamed-chunk-11-1.pdf}}
+Boxplot Satisfaction par Public : permet de voir si certains types de
+résidents sont plus critiques ou satisfaits.
+
+\subsubsection{Analyse de l'influence du prix sur la
+satisfaction}\label{analyse-de-linfluence-du-prix-sur-la-satisfaction}
+
+Est-ce logiquement pertinent de penser que le prix influence la
+satisfaction ?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  La relation semble-t-elle linéaire?
+\end{enumerate}
+
+Il est logique de se demander si le prix de la pension influence la
+satisfaction des résidents. Un prix plus élevé pourrait suggérer une
+meilleure qualité perçue, mais il pourrait aussi générer une frustration
+si le service ne correspond pas aux attentes.
+
+Pour vérifier la relation, un graphique de dispersion entre le prix et
+la satisfaction a été réalisé, avec une droite de régression :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X }\OtherTok{\textless{}{-}}\NormalTok{ (df}\SpecialCharTok{$}\NormalTok{PRIX\_PENSION)  }\CommentTok{\# On récupère la colonne 14 (PRIX)}
+\NormalTok{Y }\OtherTok{\textless{}{-}}\NormalTok{ (df}\SpecialCharTok{$}\NormalTok{Satisfaction)  }\CommentTok{\# On récupère la colonne 13 (Satisfaction)}
+
+
+\CommentTok{\# Graphique de dispersion}
+\FunctionTok{plot}\NormalTok{(X, Y, }
+     \AttributeTok{main =} \StringTok{"Relation entre PRIX et Satisfaction"}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"Prix Pension"}\NormalTok{, }
+     \AttributeTok{ylab =} \StringTok{"Satisfaction"}\NormalTok{,}
+     \AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkgreen"}\NormalTok{)}
+
+\CommentTok{\# Ajouter une ligne de régression}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(Y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ X), }\AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Exam-R_Final_files/figure-latex/unnamed-chunk-12-1.pdf}}
+Remarque: Les points sont largement dispersés et la droite est presque
+horizontale. Le coefficient associé au prix dans le modèle linéaire est
+proche de zéro.
+
+\subsubsection{Conclusion : Le prix de la pension n'a pas d'influence
+significative sur la satisfaction globale des résidents. Payer plus cher
+ne garantit pas un niveau de satisfaction plus
+élevé.}\label{conclusion-le-prix-de-la-pension-na-pas-dinfluence-significative-sur-la-satisfaction-globale-des-ruxe9sidents.-payer-plus-cher-ne-garantit-pas-un-niveau-de-satisfaction-plus-uxe9levuxe9.}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Quel est le coefficient de corrélation de Pearson entre PRIX et
+  SATISFACTION ?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calcul de la corrélation}
+\NormalTok{cor\_test }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{PRIX\_PENSION, df}\SpecialCharTok{$}\NormalTok{Satisfaction)}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Le coefficient de corrélation est de :"}\NormalTok{, }\FunctionTok{round}\NormalTok{(cor\_test, }\DecValTok{3}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Le coefficient de corrélation est de : 0.095"
+\end{verbatim}
+
+Un coefficient de 0.095 est extrêmement proche de 0.
+
+Interprétation : Cela signifie qu'il n'y a quasiment aucune relation
+linéaire entre le prix payé et la satisfaction globale des résidents. Le
+prix n'explique pas, à lui seul, pourquoi un résident est content ou
+non.
+
+Partie 3: Régression Linéaire Univariée (Le Prix)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Lancement du modèle}
+\NormalTok{modele\_uni }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Satisfaction }\SpecialCharTok{\textasciitilde{}}\NormalTok{ PRIX\_PENSION, }\AttributeTok{data =}\NormalTok{ df)}
+
+\CommentTok{\# Affichage du diagnostic complet}
+\FunctionTok{summary}\NormalTok{(modele\_uni)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Satisfaction ~ PRIX_PENSION, data = df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.5796 -1.2501  0.0389  1.2391  4.9878 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  4.5687227  0.1968504  23.209   <2e-16 ***
+## PRIX_PENSION 0.0005737  0.0003475   1.651   0.0998 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.767 on 298 degrees of freedom
+## Multiple R-squared:  0.009064,   Adjusted R-squared:  0.005738 
+## F-statistic: 2.726 on 1 and 298 DF,  p-value: 0.0998
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Le verdict de la significativité (La p-value)
+\end{enumerate}
+
+Interprétation : Comme 0.0998 \textgreater{} 0.05, on conclut que le
+prix n'a pas d'influence statistiquement significative sur la
+satisfaction au seuil de 5\%.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  La capacité prédictive (Le R-squared) : 0.009064.
+\end{enumerate}
+
+Interprétation : le prix n'explique que 0,9\% de la variation de la
+satisfaction.
+
+Conclusion : 99,1\% de la satisfaction des résidents dépend d'autres
+facteurs que le prix de la pension.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  L'analyse de l'effet (L'Estimate)
+\end{enumerate}
+
+L'Estimate du prix est de 0.0005737.
+
+Interprétation : Ce chiffre représente la pente de la droite. Il
+signifie que si le prix augmente de 100 euros, la note de satisfaction
+n'augmente que de 0,05 point (100 * 0.00057). C'est un impact quasiment
+nul dans la réalité.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Les résidus (L'erreur du modèle)Les résidus vont de -3.57 à +4.98.
+\end{enumerate}
+
+Interprétation : Le modèle fait des erreurs de prédiction assez larges
+(certains résidents ont une note réelle bien plus haute ou plus basse
+que ce que le prix laissait supposer). La médiane des résidus proche de
+0 (0.03) est cependant un bon signe pour la validité du calcul.
+
+Résumé:
+
+``L'analyse par régression linéaire univariée montre que le prix de la
+pension n'est pas un facteur déterminant de la satisfaction globale (p
+\textgreater{} 0.05). Avec un R\^{}2 de seulement 0,9\%, nous pouvons
+affirmer que le coût financier du séjour n'est pas ce qui rend les
+résidents heureux dans cet établissement.
+
+Il est donc nécessaire d'explorer d'autres variables pour comprendre la
+satisfaction.''
+
+\subsubsection{Partie 4: Régression Linéaire Multivariée (Les
+Services)}\label{partie-4-ruxe9gression-linuxe9aire-multivariuxe9e-les-services}
+
+Testons notre modèle globalement afin de voir quels variables
+influencent notre variable cible.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{modele\_complet }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Satisfaction }\SpecialCharTok{\textasciitilde{}}\NormalTok{ . , }\AttributeTok{data =}\NormalTok{ df) }\CommentTok{\# Le point signifie "toutes les variables"}
+\FunctionTok{summary}\NormalTok{(modele\_complet)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Satisfaction ~ ., data = df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.1802 -1.1729 -0.0271  1.0686  3.4527 
+## 
+## Coefficients:
+##                               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                  0.2539004  0.8372363   0.303 0.761921    
+## FormuleChambre Individuelle  0.4784845  0.4093982   1.169 0.243516    
+## FormuleChambre médicalisée  -0.7893013  0.4069203  -1.940 0.053439 .  
+## FormuleMaison d'hôte/Studio  0.2358503  0.4555546   0.518 0.605069    
+## PublicSemi-valides           0.4009324  0.2675882   1.498 0.135198    
+## PublicValides               -0.1651918  0.2898229  -0.570 0.569160    
+## Activite                    -0.0503033  0.0698971  -0.720 0.472335    
+## Accueil                      0.1399181  0.1314571   1.064 0.288098    
+## Soins_Qualite                0.4866720  0.1194474   4.074 6.04e-05 ***
+## Competence_Personnel         0.3702647  0.0951127   3.893 0.000124 ***
+## Disponibilite_Personnel      0.1702252  0.1146872   1.484 0.138886    
+## Reconfort                    0.3227062  0.1090080   2.960 0.003340 ** 
+## Qualite_Restauration        -0.0377417  0.1511487  -0.250 0.803007    
+## Hygiene                      0.3803247  0.1649918   2.305 0.021905 *  
+## Confort_Chambre              0.1223032  0.0977222   1.252 0.211801    
+## Services_Annexes            -0.0569119  0.1035615  -0.550 0.583076    
+## PRIX_PENSION                 0.0004709  0.0003288   1.432 0.153168    
+## Sexefemme                    0.2040598  0.1925903   1.060 0.290277    
+## CSPCadre Moyen              -0.1183807  0.3427858  -0.345 0.730096    
+## CSPCadre Supérieur           0.0127699  0.3506098   0.036 0.970972    
+## CSPCommerc.Artisan          -0.5109121  0.3935493  -1.298 0.195301    
+## CSPEmployé                  -0.4558584  0.3378504  -1.349 0.178353    
+## CSPInactif, Autre           -0.1482106  0.3877120  -0.382 0.702556    
+## CSPOuvrier                   0.0717654  0.3975300   0.181 0.856871    
+## CSPProf.Interméd.            0.3038934  0.3572105   0.851 0.395654    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.574 on 275 degrees of freedom
+## Multiple R-squared:  0.2746, Adjusted R-squared:  0.2113 
+## F-statistic: 4.339 on 24 and 275 DF,  p-value: 7.493e-10
+\end{verbatim}
+
+Interprétation: Après avoir tester notre modèle globalement, Nous avons
+sélectionné les variables `Soins\_Qualite', `Competence\_Personnel',
+`Hygiene' et `Reconfort' car elles sont significatives.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Modèle optimisé (exemple avec 3 variables significatives)}
+\NormalTok{modele\_final }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Satisfaction }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Soins\_Qualite }\SpecialCharTok{+}\NormalTok{ Competence\_Personnel }\SpecialCharTok{+}\NormalTok{ Reconfort  }\SpecialCharTok{+}\NormalTok{ Hygiene, }\AttributeTok{data =}\NormalTok{ df)}
+
+\CommentTok{\# Affichage des résultats}
+\FunctionTok{summary}\NormalTok{(modele\_final)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Satisfaction ~ Soins_Qualite + Competence_Personnel + 
+##     Reconfort + Hygiene, data = df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.7384 -1.1821 -0.0234  1.1733  4.2616 
+## 
+## Coefficients:
+##                      Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)           1.68701    0.46133   3.657 0.000302 ***
+## Soins_Qualite         0.35787    0.10262   3.487 0.000562 ***
+## Competence_Personnel  0.26261    0.08878   2.958 0.003346 ** 
+## Reconfort             0.35634    0.10318   3.453 0.000635 ***
+## Hygiene               0.42838    0.15344   2.792 0.005582 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.639 on 295 degrees of freedom
+## Multiple R-squared:  0.1562, Adjusted R-squared:  0.1448 
+## F-statistic: 13.65 on 4 and 295 DF,  p-value: 3.162e-10
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Analyse de la Qualité GlobaleLa p-value globale :
+\end{enumerate}
+
+Elle est de 3.162e-10 (quasiment 0). Cela signifie que le modèle est
+hautement significatif. Les services choisis ont un impact réel, ce
+n'est pas dû au hasard.
+
+Le R-squared (R\^{}2) : Il est de 0.1562 (15,6\%).
+
+Interprétation : C'est beaucoup mieux que les 0,9\% du prix seul ! Cela
+signifie que ces 4 variables (Soins, Compétence, Réconfort, Hygiène)
+expliquent environ 16\% de la satisfaction totale.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Hiérarchie des services (Le poids de chaque variable)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  L'Hygiène (0.428) : C'est le coefficient le plus élevé. Une
+  augmentation de 1 point sur la note d'hygiène entraîne une hausse de
+  0,43 point sur la satisfaction globale. C'est le levier numéro 1.
+\item
+  Les Soins (0.358) : Juste derrière, la qualité médicale est cruciale.
+\item
+  Le Réconfort (0.356) : L'aspect humain et psychologique a presque
+  autant de poids que les soins techniques.
+\item
+  La Compétence (0.262) : Elle reste très importante, mais un peu moins
+  impactante que le ressenti de réconfort ou l'hygiène.
+\end{enumerate}
+
+\#\#\#Conclusion:
+
+\subsubsection{``Alors que le prix ne jouait aucun rôle, la satisfaction
+des résidents repose sur un socle de quatre piliers : l'hygiène, la
+qualité des soins, le réconfort humain et la compétence technique.
+L'hygiène apparaît comme la priorité absolue des résidents dans ce jeu
+de
+données.''}\label{alors-que-le-prix-ne-jouait-aucun-ruxf4le-la-satisfaction-des-ruxe9sidents-repose-sur-un-socle-de-quatre-piliers-lhygiuxe8ne-la-qualituxe9-des-soins-le-ruxe9confort-humain-et-la-compuxe9tence-technique.-lhygiuxe8ne-apparauxeet-comme-la-priorituxe9-absolue-des-ruxe9sidents-dans-ce-jeu-de-donnuxe9es.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Graphique
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{)) }
+\FunctionTok{plot}\NormalTok{(modele\_final)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Exam-R_Final_files/figure-latex/unnamed-chunk-17-1.pdf}}
+
+\subsubsection{Partie 5 : L'Analyse par Profil
+(ANOVA)}\label{partie-5-lanalyse-par-profil-anova}
+
+La satisfaction moyenne est-elle significativement différente selon le
+degré d'autonomie ?
+
+TEST ANOVA
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Visualisation (Le Boxplot)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Boxplot de la satisfaction par type de public}
+\FunctionTok{boxplot}\NormalTok{(Satisfaction }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Public, }\AttributeTok{data =}\NormalTok{ df,}
+        \AttributeTok{main =} \StringTok{"Satisfaction selon l\textquotesingle{}autonomie du public"}\NormalTok{,}
+        \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }\StringTok{"tomato"}\NormalTok{),}
+        \AttributeTok{xlab =} \StringTok{"Degré d\textquotesingle{}autonomie"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Note de Satisfaction"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Exam-R_Final_files/figure-latex/unnamed-chunk-18-1.pdf}}
+Interprétation: Les résidents ``Valides'' semblent globalement moins
+satisfaits que les résidents plus dépendants.
+
+Hypothèse: H(0): les personnes ``Valides'' sont plus exigeantes sur des
+critères que nous n'avons pas encore explorés (comme les animations ou
+les services annexes). h(1):les personnes ``Dépendantes'' se concentrent
+sur les soins et le réconfort, qui sont bien notés.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Test statistique pour comparer les 3 groupes}
+\NormalTok{modele\_anova }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(Satisfaction }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Public, }\AttributeTok{data =}\NormalTok{ df)}
+\FunctionTok{summary}\NormalTok{(modele\_anova)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              Df Sum Sq Mean Sq F value  Pr(>F)   
+## Public        2   34.9  17.443    5.73 0.00361 **
+## Residuals   297  904.1   3.044                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+La p-value (0.00361) est largement inférieure au seuil de 0.05.
+
+Interprétation : On rejette l'hypothèse nulle (H0).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{TukeyHSD}\NormalTok{(modele\_anova)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = Satisfaction ~ Public, data = df)
+## 
+## $Public
+##                                diff        lwr        upr     p adj
+## Semi-valides-Dépendantes  0.1630816 -0.4869637  0.8131269 0.8250858
+## Valides-Dépendantes      -0.5800298 -1.1874525  0.0273928 0.0648023
+## Valides-Semi-valides     -0.7431115 -1.2926305 -0.1935924 0.0045466
+\end{verbatim}
+
+Conclusion:
+
+L'analyse de variance (ANOVA) montre que le degré d'autonomie des
+résidents a un impact significatif sur leur satisfaction globale
+(\(F(2, 297) = 5.73, p < 0.01\)). Le graphique boxplot suggère que les
+résidents les plus autonomes (Valides) affichent un niveau de
+satisfaction inférieur aux autres catégories.''
+
+TEST DE Tukey
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{TukeyHSD}\NormalTok{(modele\_anova)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = Satisfaction ~ Public, data = df)
+## 
+## $Public
+##                                diff        lwr        upr     p adj
+## Semi-valides-Dépendantes  0.1630816 -0.4869637  0.8131269 0.8250858
+## Valides-Dépendantes      -0.5800298 -1.1874525  0.0273928 0.0648023
+## Valides-Semi-valides     -0.7431115 -1.2926305 -0.1935924 0.0045466
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Analyse des comparaisons par paires
+\end{enumerate}
+
+-Valides vs Semi-valides (\(p\ adj = 0,0045\)) : SIGNIFICATIF La
+satisfaction des Valides est inférieure de 0,74 point à celle des
+Semi-valides. Comme la p-value est très faible (bien inférieure à 0,05),
+cet écart est indiscutable et statistiquement solide.
+
+-Valides vs Dépendantes (\(p\ adj = 0,0648\)) : NON SIGNIFICATIF (au
+seuil de 5\%)Bien que l'écart soit de -0,58 point, la p-value dépasse
+légèrement le seuil critique de 0,05. On parle ici de ``tendance'', mais
+on ne peut pas affirmer avec certitude que la différence est
+systématique.
+
+-Semi-valides vs Dépendantes (\(p\ adj = 0,8250\)) : AUCUNE DIFFÉRENCELe
+score de 0,82 montre que ces deux groupes ont des niveaux de
+satisfaction quasiment identiques.
+
+RESUME (Régression + ANOVA + Tukey)
+
+1.Le Prix est hors sujet : Payer plus cher ne garantit absolument pas
+une meilleure expérience pour le résident. 2.Le moteur de la
+satisfaction : Ce sont l'Hygiène, les Soins et le Réconfort qui font
+varier les notes. Ce sont les leviers sur lesquels la direction doit
+investir. 3.Le point de rupture : Il existe une fracture nette entre les
+résidents Semi-valides (plutôt satisfaits) et les Valides (les moins
+satisfaits).
+
+Partie 6: Tests de Validité (Diagnostics)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 1. Installation du packages}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"car"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"https://cran.rstudio.com/"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installation du package dans 'C:/Users/hayet/AppData/Local/R/win-library/4.5'
+## (car 'lib' n'est pas spécifié)
+\end{verbatim}
+
+\begin{verbatim}
+## le package 'car' a été décompressé et les sommes MD5 ont été vérifiées avec succés
+## 
+## Les packages binaires téléchargés sont dans
+##  C:\Users\hayet\AppData\Local\Temp\RtmpkDCDfV\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2. Installation de lmtest (pour le test d\textquotesingle{}homoscédasticité )}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"lmtest"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"https://cran.rstudio.com/"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installation du package dans 'C:/Users/hayet/AppData/Local/R/win-library/4.5'
+## (car 'lib' n'est pas spécifié)
+\end{verbatim}
+
+\begin{verbatim}
+## le package 'lmtest' a été décompressé et les sommes MD5 ont été vérifiées avec succés
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: impossible de supprimer l'installation précédente du package 'lmtest'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in file.copy(savedcopy, lib, recursive = TRUE): problème lors de la
+## copie de
+## C:\Users\hayet\AppData\Local\R\win-library\4.5\00LOCK\lmtest\libs\x64\lmtest.dll
+## vers
+## C:\Users\hayet\AppData\Local\R\win-library\4.5\lmtest\libs\x64\lmtest.dll :
+## Permission denied
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: 'lmtest' restauré
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Les packages binaires téléchargés sont dans
+##  C:\Users\hayet\AppData\Local\Temp\RtmpkDCDfV\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(car)    }\CommentTok{\# Pour le VIF}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'car' a été compilé avec la version R 4.5.2
+\end{verbatim}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : carData
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: le package 'carData' a été compilé avec la version R 4.5.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lmtest) }\CommentTok{\# Pour Breusch{-}Pagan}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'lmtest' a été compilé avec la version R 4.5.2
+\end{verbatim}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : zoo
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: le package 'zoo' a été compilé avec la version R 4.5.2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attachement du package : 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## Les objets suivants sont masqués depuis 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 1. Normalité (Shapiro{-}Wilk)}
+\NormalTok{shapiro\_res }\OtherTok{\textless{}{-}} \FunctionTok{shapiro.test}\NormalTok{(}\FunctionTok{residuals}\NormalTok{(modele\_final))}
+
+\CommentTok{\# 2. Multicolinéarité (VIF)}
+\NormalTok{vif\_res }\OtherTok{\textless{}{-}} \FunctionTok{vif}\NormalTok{(modele\_final)}
+
+\CommentTok{\# 3. Homoscédasticité (Breusch{-}Pagan)}
+\NormalTok{bp\_res }\OtherTok{\textless{}{-}} \FunctionTok{bptest}\NormalTok{(modele\_final)}
+
+\CommentTok{\# Affichage condensé}
+\FunctionTok{list}\NormalTok{(}\AttributeTok{Shapiro =}\NormalTok{ shapiro\_res}\SpecialCharTok{$}\NormalTok{p.value, }\AttributeTok{VIF =}\NormalTok{ vif\_res, }\AttributeTok{BP =}\NormalTok{ bp\_res}\SpecialCharTok{$}\NormalTok{p.value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $Shapiro
+## [1] 0.1165322
+## 
+## $VIF
+##        Soins_Qualite Competence_Personnel            Reconfort 
+##             1.158305             1.164319             1.018858 
+##              Hygiene 
+##             1.024196 
+## 
+## $BP
+##         BP 
+## 0.01030366
+\end{verbatim}
+
+INTERPRETATION
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  La Normalité Le score : \(0,116 > 0,05\). Veridict: nos résidus
+  suivent une loi normale
+\item
+  La Multicolinéarité Les scores : nos quatre variables ont un VIF très
+  proche de 1. Veridict: nos variables Soins, Competence, Reconfort et
+  Hygiene sont bien distinctes. Elles ne font pas ``doublon''.chacun
+  apporte une information unique au modèle.
+\end{enumerate}
+
+3.L'Homoscédasticité Le score : \(0,010 < 0,05\). Veridict: Nous avons
+ce qu'on appelle de l'hétéroscédasticité. La précision de notre modèle
+n'est pas constante. Il est probablement plus précis pour prédire les
+notes de satisfaction moyennes que pour les notes extrêmes (très basses
+ou très hautes).
+
+Partie 7: Prédictions Question: Si j'améliore l'hygiène ou les soins
+dans ma résidence, à quelle note de satisfaction globale puis-je
+m'attendre ?
+
+A. Créer un scénario ``Futur'' Imaginons deux résidents fictifs :
+
+Mme X : Notes moyennes partout (3/5). M. Y : Notes excellentes partout
+(5/5).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Création des profils à tester}
+\NormalTok{nouveaux\_residents }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Soins\_Qualite =} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{),}
+  \AttributeTok{Competence\_Personnel =} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{),}
+  \AttributeTok{Reconfort =} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{),}
+  \AttributeTok{Hygiene =} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{)}
+
+\CommentTok{\# Calcul de la prédiction}
+\NormalTok{predictions }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(modele\_final, }\AttributeTok{newdata =}\NormalTok{ nouveaux\_residents, }\AttributeTok{interval =} \StringTok{"confidence"}\NormalTok{)}
+\FunctionTok{rownames}\NormalTok{(predictions) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Profil Moyen"}\NormalTok{, }\StringTok{"Profil Excellent"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(predictions)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                       fit      lwr      upr
+## Profil Moyen     5.902633 5.464255 6.341010
+## Profil Excellent 8.713047 7.493353 9.932742
+\end{verbatim}
+
+Graphique de Prédiction Comparaison du Profil Moyen et du Profil
+Excellent
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Création d\textquotesingle{}un graphique simple pour les prédictions}
+\FunctionTok{barplot}\NormalTok{(predictions[,}\DecValTok{1}\NormalTok{], }
+        \AttributeTok{names.arg =} \FunctionTok{c}\NormalTok{(}\StringTok{"Profil Moyen"}\NormalTok{, }\StringTok{"Profil Excellent"}\NormalTok{),}
+        \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"skyblue"}\NormalTok{, }\StringTok{"royalblue"}\NormalTok{),}
+        \AttributeTok{main =} \StringTok{"Gain de Satisfaction Prédit"}\NormalTok{,}
+        \AttributeTok{ylab =} \StringTok{"Note de Satisfaction (prédite)"}\NormalTok{,}
+        \AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{))}
+\CommentTok{\# Ajout des barres d\textquotesingle{}erreur (Intervalles de confiance)}
+\FunctionTok{arrows}\NormalTok{(}\AttributeTok{x0 =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{, }\FloatTok{1.9}\NormalTok{), }\AttributeTok{y0 =}\NormalTok{ predictions[,}\DecValTok{2}\NormalTok{], }\AttributeTok{x1 =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{, }\FloatTok{1.9}\NormalTok{), }\AttributeTok{y1 =}\NormalTok{ predictions[,}\DecValTok{3}\NormalTok{], }
+       \AttributeTok{angle =} \DecValTok{90}\NormalTok{, }\AttributeTok{code =} \DecValTok{3}\NormalTok{, }\AttributeTok{length =} \FloatTok{0.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Exam-R_Final_files/figure-latex/unnamed-chunk-25-1.pdf}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Interprétation des Résultats
+\end{enumerate}
+
+-Profil Moyen (Note de 3/5 partout) : La satisfaction prédite est de
+5,90/10. L'intervalle de confiance nous dit qu'il y a 95\% de chances
+que la note réelle soit comprise entre 5,46 et 6,34.
+
+-Profil Excellent (Note de 5/5 partout) : La satisfaction grimpe à
+8,71/10. L'intervalle de confiance est plus large (7,49 à 9,93), ce qui
+est normal car les modèles sont souvent un peu moins précis sur les
+valeurs extrêmes.
+
+CONCLUSION GENERALE
+
+1.L'illusion du Prix : Nous avons démontré que le prix n'est pas un gage
+de qualité perçue (\(r = 0,095\)).
+
+2.Les leviers d'action : L'établissement doit prioriser l'Hygiène
+(coefficient le plus fort : \(0,43\)) et les Soins, qui sont les piliers
+de la satisfaction.
+
+3.Le point de vigilance : L'ANOVA et le test de Tukey ont révélé que les
+résidents ``Valides'' sont les moins satisfaits, signalant un besoin de
+réadapter l'offre pour ce public spécifique.
+
+4.Fiabilité : Le modèle est robuste (VIF \(\approx 1,1\) et résidus
+normaux), malgré une légère instabilité de la variance (Breusch-Pagan).
+
+\subsubsection{Conclusion}\label{conclusion}
+
+• La satisfaction n'est pas pleinement prédictible par le profil
+sociodémographique. • Les facteurs critiques restent les services
+(Hygiène, Restauration) et le suivi des résidents valides. •
+Recommandation : Améliorer la qualité des services pour tous les
+résidents, plutôt que de cibler un profil particulier. • Limites : Les
+résultats dépendent des variables disponibles et d'autres facteurs non
+mesurés pourraient influencer la satisfaction.
+
+\end{document}

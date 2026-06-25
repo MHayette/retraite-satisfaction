@@ -1,0 +1,471 @@
+---
+title: "Satisfaction des résidents en maison de retraite"
+output:
+  html_document: default
+  pdf_document: default
+date: "2026-02-21"
+---
+
+Nom jeu de donnée : Retraite
+Thème : Satisfaction des résidents en maison de retraite
+SUJET : Analyse des déterminants de la satisfaction globale en maison de retraite
+
+Réalisée par :
+
+ MEDESSOUKOU Hayette
+ AMADA Soibrati
+ METCHUM Davila
+
+## Introduction
+
+Ce projet R vise à analyser la satisfaction des résidents dans un établissement en fonction de leur profil (type de public, sexe, catégorie socio-professionnelle) et des services proposés (accueil, soins, hygiène, restauration, confort, etc.). L’objectif est de comprendre quels facteurs influencent le plus la satisfaction et d’identifier les points d’amélioration pour la direction. Les analyses combinent statistiques descriptives, visualisations graphiques et modélisation.
+
+
+ Partie 1 : Préparation et Exploration (Le "Data Cleaning")
+
+1-Importation : Chargez le fichier Retraite.csv et renommez les colonnes.
+```{r}
+#Importation du package
+if(!require(readxl)) install.packages("readxl")
+library(readxl)
+
+#Chargement de données
+df <- read_excel("C:/Users/hayet/Downloads/FRANCE/COURS/R/R Prof 2/Retraite.xlsx")
+head(df)
+
+```
+
+Le jeu de données comprend 300 résidents et 16 variables. Il contient :
+
+- Le profil des résidents (Sexe, CSP, type de Public) ;
+- L’évaluation de plusieurs services (Accueil, Soins, Hygiène, Restauration, Réconfort, Confort de la chambre, Services annexes, etc.) ;
+- Le prix de la pension ;
+- La note globale de satisfaction, qui constitue la variable à expliquer.
+
+Certaines variables présentent des valeurs manquantes, notamment Réconfort, Confort de la chambre et Services annexes, ce qui devra être pris en compte dans l’analyse.
+
+### a - Renommage des colonnes
+```{r}
+
+#Renommage des colonnes
+names(df) <- c("Formule", "Public", "Activite", "Accueil", "Soins_Qualite",
+                     "Competence_Personnel", "Disponibilite_Personnel", "Reconfort",
+                     "Qualite_Restauration", "Hygiene", "Confort_Chambre", "Services_Annexes",
+                     "Satisfaction", "PRIX_PENSION", "Sexe", "CSP")
+
+# Conversion des variables qualitatives en "Facteurs" pour que R les reconnaisse comme catégories
+df$Sexe <- factor(df$Sexe, 
+                             levels = c("Un homme", "Une femme"), 
+                             labels = c("homme", "femme"))
+
+df$Formule <- as.factor(df$Formule)
+df$Public <- as.factor(df$Public)
+
+summary(df$Sexe)
+```
+
+### b- Vérifier les valeurs manquantes
+```{r}
+# Compter les NA par colonne
+colSums(is.na(df))
+```
+*Interpretation
+Ici on constate que les variables de services comtiennent des valeurs manquantes. De ce fait au lieu de les supprimer, on va remplacer ces valeurs manquantes par la médiane.
+
+### b- Imputation par la médiane (variables numériques)
+
+## 3- Gestion des données manquantes
+
+Afin d’éviter la perte d’informations liée à la suppression des observations incomplètes, nous avons appliqué une imputation par la médiane.
+Cette méthode est plus robuste que la moyenne, car elle est moins sensible aux valeurs extrêmes, notamment pour la variable Prix de la pension.
+
+```{r}
+# Fonction pour imputer par la médiane
+imputer_mediane <- function(x) {
+  x[is.na(x)] <- median(x, na.rm = TRUE)
+  return(x)
+}
+
+# Colonnes numériques existantes
+cols_numeriques <- c("Accueil", "Soins_Qualite", "Competence_Personnel", 
+                     "Disponibilite_Personnel", "Reconfort", 
+                     "Qualite_Restauration", "Hygiene", "Confort_Chambre", 
+                     "Services_Annexes")
+
+# Imputation
+df[cols_numeriques] <- lapply(df[cols_numeriques], imputer_mediane)
+
+# Vérification finale
+colSums(is.na(df))
+```
+
+2-Aperçu et Structure des données
+```{r}
+
+str(df)
+head(df)
+```
+
+
+```{r}
+# Sélectionner uniquement les variables de services
+services_cols <- df[, 4:12]
+services_cols
+```
+
+*Interprétation des résultats
+A-Les variables de service (Accueil, Soins, Restauration, etc.) sont notées sur une échelle de 1 à 5.
+B-La satisfaction semble être notée sur une échelle allant jusqu'à 10
+C-Le prix de la pension varie fortement( de 2 à 994 Unités monétaires)
+
+
+
+### Partie 2: Analyse Descriptive et Corrélations
+### 1- Analyse Descriptive
+## a) Variables numériques (moyenne, médiane, min, max)
+```{r}
+# Résumé des variables numériques
+summary(df[cols_numeriques])
+summary(df$Satisfaction)
+summary(df$PRIX_PENSION)
+```
+### Interprétation
+
+Services (Accueil, Soins, Hygiène, Restauration…) : les notes sont en moyenne autour de 2–3/4, donc globalement satisfaisantes, mais certaines prestations comme l’Hygiène ou la Restauration restent un peu faibles.
+
+Satisfaction globale : la médiane est 5/10, ce qui montre que les résidents ont des avis partagés.
+
+Prix de la pension : varie beaucoup selon la formule, médiane à ~489 €, certains payent très peu, d’autres beaucoup plus.
+
+### 1-b) Variables qualitatives (effectifs et proportions)
+```{r}
+# Sexe
+table(df$Sexe)
+prop.table(table(df$Sexe))
+
+# Public
+table(df$Public)
+prop.table(table(df$Public))
+
+# Formule
+table(df$Formule)
+prop.table(table(df$Formule))
+
+# CSP
+table(df$CSP)
+prop.table(table(df$CSP))
+```
+ 
+ 
+## 2- Analyse graphique
+### a- Distribution de la satisfaction
+```{r}
+hist(df$Satisfaction, main="Distribution de la Satisfaction", xlab="Satisfaction", col="lightblue")
+```
+Histogramme : montre la distribution globale des notes de satisfaction.
+
+### b) Boxplot du prix par formule
+
+```{r}
+boxplot(PRIX_PENSION ~ Formule, data = df,
+        main = "Prix de la pension par Formule",
+        xlab = "Formule",
+        ylab = "Prix de la pension",
+        col = c("lightpink", "lightgreen", "lightblue", "lightyellow"))
+```
+Interprétation:
+
+### c) Boxplot de la satisfaction selon le type de Public
+```{r}
+boxplot(Satisfaction ~ Public, data = df,
+        main = "Satisfaction selon le type de Public",
+        xlab = "Type de Public",
+        ylab = "Satisfaction",
+        col = c("lightpink", "lightgreen", "lightblue"))
+```
+Boxplot Satisfaction par Public : permet de voir si certains types de résidents sont plus critiques ou satisfaits.
+
+### Analyse de l’influence du prix sur la satisfaction
+
+Est-ce logiquement pertinent de penser que le prix influence la satisfaction ?
+
+a) La relation semble-t-elle linéaire?
+
+Il est logique de se demander si le prix de la pension influence la satisfaction des résidents. Un prix plus élevé pourrait suggérer une meilleure qualité perçue, mais il pourrait aussi générer une frustration si le service ne correspond pas aux attentes.
+
+Pour vérifier la relation, un graphique de dispersion entre le prix et la satisfaction a été réalisé, avec une droite de régression :
+```{r}
+X <- (df$PRIX_PENSION)  # On récupère la colonne 14 (PRIX)
+Y <- (df$Satisfaction)  # On récupère la colonne 13 (Satisfaction)
+
+
+# Graphique de dispersion
+plot(X, Y, 
+     main = "Relation entre PRIX et Satisfaction",
+     xlab = "Prix Pension", 
+     ylab = "Satisfaction",
+     pch = 16, col = "darkgreen")
+
+# Ajouter une ligne de régression
+abline(lm(Y ~ X), col = "red", lwd = 2)
+```
+Remarque: Les points sont largement dispersés et la droite est presque horizontale. Le coefficient associé au prix dans le modèle linéaire est proche de zéro.
+
+### Conclusion : Le prix de la pension n’a pas d’influence significative sur la satisfaction globale des résidents. Payer plus cher ne garantit pas un niveau de satisfaction plus élevé.
+
+
+
+b) Quel est le coefficient de corrélation de Pearson entre PRIX et SATISFACTION ?
+```{r}
+# Calcul de la corrélation
+cor_test <- cor(df$PRIX_PENSION, df$Satisfaction)
+print(paste("Le coefficient de corrélation est de :", round(cor_test, 3)))
+```
+Un coefficient de 0.095 est extrêmement proche de 0.
+
+Interprétation : Cela signifie qu'il n'y a quasiment aucune relation linéaire entre le prix payé et la satisfaction globale des résidents. Le prix n'explique pas, à lui seul, pourquoi un résident est content ou non.
+
+Partie 3: Régression Linéaire Univariée (Le Prix)
+```{r}
+# Lancement du modèle
+modele_uni <- lm(Satisfaction ~ PRIX_PENSION, data = df)
+
+# Affichage du diagnostic complet
+summary(modele_uni)
+```
+1. Le verdict de la significativité (La p-value)
+
+Interprétation :  Comme 0.0998 > 0.05, on conclut que le prix n'a pas d'influence statistiquement significative sur la satisfaction au seuil de 5%. 
+
+2. La capacité prédictive (Le R-squared) : 0.009064.
+
+Interprétation :  le prix n'explique que 0,9% de la variation de la satisfaction.
+
+Conclusion : 99,1% de la satisfaction des résidents dépend d'autres facteurs que le prix de la pension. 
+
+3. L'analyse de l'effet (L'Estimate)
+
+L'Estimate du prix est de 0.0005737.
+
+Interprétation : Ce chiffre représente la pente de la droite. Il signifie que si le prix augmente de 100 euros, la note de satisfaction n'augmente que de 0,05 point (100 * 0.00057). C'est un impact quasiment nul dans la réalité.
+
+4. Les résidus (L'erreur du modèle)Les résidus vont de -3.57 à  +4.98.
+
+Interprétation : Le modèle fait des erreurs de prédiction assez larges (certains résidents ont une note réelle bien plus haute ou plus basse que ce que le prix laissait supposer). La médiane des résidus proche de 0 (0.03) est cependant un bon signe pour la validité du calcul.
+
+Résumé:
+
+"L'analyse par régression linéaire univariée montre que le prix de la pension n'est pas un facteur déterminant de la satisfaction globale (p > 0.05). Avec un R^2 de seulement 0,9%, nous pouvons affirmer que le coût financier du séjour n'est pas ce qui rend les résidents heureux dans cet établissement.
+
+Il est donc nécessaire d'explorer d'autres variables pour comprendre la satisfaction."
+
+### Partie 4: Régression Linéaire Multivariée (Les Services)
+ 
+Testons notre modèle globalement afin de voir quels variables influencent notre variable cible.
+ 
+```{r}
+modele_complet <- lm(Satisfaction ~ . , data = df) # Le point signifie "toutes les variables"
+summary(modele_complet)
+```
+Interprétation:
+Après avoir tester notre modèle globalement, Nous avons sélectionné les variables 'Soins_Qualite', 'Competence_Personnel', 'Hygiene' et 'Reconfort' car elles sont significatives.
+
+```{r}
+# Modèle optimisé (exemple avec 3 variables significatives)
+modele_final <- lm(Satisfaction ~ Soins_Qualite + Competence_Personnel + Reconfort  + Hygiene, data = df)
+
+# Affichage des résultats
+summary(modele_final)
+```
+1. Analyse de la Qualité GlobaleLa p-value globale : 
+
+Elle est de 3.162e-10 (quasiment 0). Cela signifie que le modèle est hautement significatif. Les services choisis ont un impact réel, ce n'est pas dû au hasard.
+
+Le R-squared (R^2) : Il est de 0.1562 (15,6%).
+
+Interprétation : C'est beaucoup mieux que les 0,9% du prix seul ! Cela signifie que ces 4 variables (Soins, Compétence, Réconfort, Hygiène) expliquent environ 16% de la satisfaction totale. 
+
+2. Hiérarchie des services (Le poids de chaque variable)
+
+a) L'Hygiène (0.428) : C'est le coefficient le plus élevé. Une augmentation de 1 point sur la note d'hygiène entraîne une hausse de 0,43 point sur la satisfaction globale. C'est le levier numéro 1.
+
+b) Les Soins (0.358) : Juste derrière, la qualité médicale est cruciale.
+
+c) Le Réconfort (0.356) : L'aspect humain et psychologique a presque autant de poids que les soins techniques.
+
+d) La Compétence (0.262) : Elle reste très importante, mais un peu moins impactante que le ressenti de réconfort ou l'hygiène.
+
+###Conclusion:
+
+### "Alors que le prix ne jouait aucun rôle, la satisfaction des résidents repose sur un socle de quatre piliers : l'hygiène, la qualité des soins, le réconfort humain et la compétence technique. L'hygiène apparaît comme la priorité absolue des résidents dans ce jeu de données."
+
+3) Graphique
+
+```{r}
+par(mfrow = c(2, 2)) 
+plot(modele_final)
+```
+
+### Partie 5 : L'Analyse par Profil (ANOVA)
+La satisfaction moyenne est-elle significativement différente selon le degré d'autonomie ?
+
+TEST ANOVA
+
+1. Visualisation (Le Boxplot)
+```{r}
+# Boxplot de la satisfaction par type de public
+boxplot(Satisfaction ~ Public, data = df,
+        main = "Satisfaction selon l'autonomie du public",
+        col = c("lightgreen", "orange", "tomato"),
+        xlab = "Degré d'autonomie", ylab = "Note de Satisfaction")
+```
+Interprétation:
+Les résidents "Valides" semblent globalement moins satisfaits que les résidents plus dépendants.
+
+Hypothèse:
+H(0): les personnes "Valides" sont plus exigeantes sur des critères que nous n'avons pas encore explorés (comme les animations ou les services annexes).
+h(1):les personnes "Dépendantes" se concentrent sur les soins et le réconfort, qui sont bien notés.
+
+
+```{r}
+# Test statistique pour comparer les 3 groupes
+modele_anova <- aov(Satisfaction ~ Public, data = df)
+summary(modele_anova)
+```
+La p-value (0.00361) est largement inférieure au seuil de 0.05.
+
+Interprétation : On rejette  l'hypothèse nulle (H0). 
+
+```{r}
+TukeyHSD(modele_anova)
+```
+Conclusion: 
+
+L'analyse de variance (ANOVA) montre que le degré d'autonomie des résidents a un impact significatif sur leur satisfaction globale ($F(2, 297) = 5.73, p < 0.01$). Le graphique boxplot suggère que les résidents les plus autonomes (Valides) affichent un niveau de satisfaction inférieur aux autres catégories."
+
+
+TEST DE Tukey
+
+```{r}
+TukeyHSD(modele_anova)
+```
+1. Analyse des comparaisons par paires
+
+-Valides vs Semi-valides ($p\ adj = 0,0045$) : SIGNIFICATIF 
+La satisfaction des Valides est inférieure de 0,74 point à celle des Semi-valides. Comme la p-value est très faible (bien inférieure à 0,05), cet écart est indiscutable et statistiquement solide.
+
+-Valides vs Dépendantes ($p\ adj = 0,0648$) : NON SIGNIFICATIF (au seuil de 5%)Bien que l'écart soit de -0,58 point, la p-value dépasse légèrement le seuil critique de 0,05. On parle ici de "tendance", mais on ne peut pas affirmer avec certitude que la différence est systématique.
+
+-Semi-valides vs Dépendantes ($p\ adj = 0,8250$) : AUCUNE DIFFÉRENCELe score de 0,82 montre que ces deux groupes ont des niveaux de satisfaction quasiment identiques.
+
+RESUME (Régression + ANOVA + Tukey) 
+
+1.Le Prix est hors sujet : Payer plus cher ne garantit absolument pas une meilleure expérience pour le résident.
+2.Le moteur de la satisfaction : Ce sont l'Hygiène, les Soins et le Réconfort qui font varier les notes. Ce sont les leviers sur lesquels la direction doit investir.
+3.Le point de rupture : Il existe une fracture nette entre les résidents Semi-valides (plutôt satisfaits) et les Valides (les moins satisfaits).
+
+Partie 6: Tests de Validité (Diagnostics)
+```{r}
+# 1. Installation du packages
+install.packages("car", repos = "https://cran.rstudio.com/")
+
+
+# 2. Installation de lmtest (pour le test d'homoscédasticité )
+install.packages("lmtest", repos = "https://cran.rstudio.com/")
+
+library(car)    # Pour le VIF
+library(lmtest) # Pour Breusch-Pagan
+```
+
+
+```{r}
+
+# 1. Normalité (Shapiro-Wilk)
+shapiro_res <- shapiro.test(residuals(modele_final))
+
+# 2. Multicolinéarité (VIF)
+vif_res <- vif(modele_final)
+
+# 3. Homoscédasticité (Breusch-Pagan)
+bp_res <- bptest(modele_final)
+
+# Affichage condensé
+list(Shapiro = shapiro_res$p.value, VIF = vif_res, BP = bp_res$p.value)
+```
+INTERPRETATION
+
+1. La Normalité
+Le score : $0,116 > 0,05$.
+Veridict: nos résidus suivent une loi normale
+
+2. La Multicolinéarité
+Les scores : nos quatre variables ont un VIF très proche de 1.
+Veridict: nos variables Soins, Competence, Reconfort et Hygiene sont bien distinctes. Elles ne font pas "doublon".chacun apporte une information unique au modèle.
+
+3.L'Homoscédasticité
+Le score : $0,010 < 0,05$.
+Veridict: Nous avons ce qu'on appelle de l'hétéroscédasticité.
+La précision de notre modèle n'est pas constante. Il est probablement plus précis pour prédire les notes de satisfaction moyennes que pour les notes extrêmes (très basses ou très hautes).
+
+Partie 7: Prédictions
+Question: Si j'améliore l'hygiène ou les soins dans ma résidence, à quelle note de satisfaction globale puis-je m'attendre ?
+
+A. Créer un scénario "Futur"
+Imaginons deux résidents fictifs :
+
+Mme X : Notes moyennes partout (3/5).
+M. Y : Notes excellentes partout (5/5).
+
+```{r}
+# Création des profils à tester
+nouveaux_residents <- data.frame(
+  Soins_Qualite = c(3, 5),
+  Competence_Personnel = c(3, 5),
+  Reconfort = c(3, 5),
+  Hygiene = c(3, 5)
+)
+
+# Calcul de la prédiction
+predictions <- predict(modele_final, newdata = nouveaux_residents, interval = "confidence")
+rownames(predictions) <- c("Profil Moyen", "Profil Excellent")
+print(predictions)
+
+```
+ Graphique de Prédiction
+Comparaison du Profil Moyen et du Profil Excellent
+```{r}
+# Création d'un graphique simple pour les prédictions
+barplot(predictions[,1], 
+        names.arg = c("Profil Moyen", "Profil Excellent"),
+        col = c("skyblue", "royalblue"),
+        main = "Gain de Satisfaction Prédit",
+        ylab = "Note de Satisfaction (prédite)",
+        ylim = c(0, 10))
+# Ajout des barres d'erreur (Intervalles de confiance)
+arrows(x0 = c(0.7, 1.9), y0 = predictions[,2], x1 = c(0.7, 1.9), y1 = predictions[,3], 
+       angle = 90, code = 3, length = 0.1)
+```
+ 
+
+1. Interprétation des Résultats
+
+-Profil Moyen (Note de 3/5 partout) : La satisfaction prédite est de 5,90/10. L'intervalle de confiance nous dit qu'il y a 95% de chances que la note réelle soit comprise entre 5,46 et 6,34.
+
+-Profil Excellent (Note de 5/5 partout) : La satisfaction grimpe à 8,71/10. L'intervalle de confiance est plus large (7,49 à 9,93), ce qui est normal car les modèles sont souvent un peu moins précis sur les valeurs extrêmes.
+
+CONCLUSION GENERALE
+
+1.L'illusion du Prix : Nous avons démontré que le prix n'est pas un gage de qualité perçue ($r = 0,095$).
+
+2.Les leviers d'action : L'établissement doit prioriser l'Hygiène (coefficient le plus fort : $0,43$) et les Soins, qui sont les piliers de la satisfaction.
+
+3.Le point de vigilance : L'ANOVA et le test de Tukey ont révélé que les résidents "Valides" sont les moins satisfaits, signalant un besoin de réadapter l'offre pour ce public spécifique.
+
+4.Fiabilité : Le modèle est robuste (VIF $\approx 1,1$ et résidus normaux), malgré une légère instabilité de la variance (Breusch-Pagan).
+
+
+### Conclusion
+•	La satisfaction n’est pas pleinement prédictible par le profil sociodémographique.
+•	Les facteurs critiques restent les services (Hygiène, Restauration) et le suivi des résidents valides.
+•	Recommandation : Améliorer la qualité des services pour tous les résidents, plutôt que de cibler un profil particulier.
+•	Limites : Les résultats dépendent des variables disponibles et d’autres facteurs non mesurés pourraient influencer la satisfaction.
